@@ -1,0 +1,437 @@
+/* 1. Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+/* 2. CSS Variables */
+:root {
+  --color-background: #090d16;
+  --color-background-secondary: #101827;
+  --color-panel: #151f30;
+  --color-panel-raised: #1b293d;
+  --color-text: #f2f5f8;
+  --color-muted: #b2bfce;
+  --color-accent: #65e6d2;
+  --color-accent-hover: #a0fff0;
+  --color-border: #35475b;
+  --shadow-panel: 0 12px 30px rgb(0 0 0 / 30%);
+  --border-radius: 8px;
+}
+
+/* 3. Base / Reset */
+html {
+  scroll-behavior: smooth;
+  background: var(--color-background);
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(ellipse at top, #17263a 0, var(--color-background) 58%);
+  color: var(--color-text);
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+header,
+main,
+footer {
+  width: min(100% - 2rem, 1080px);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+header {
+  padding: 2rem 0 1.25rem;
+  text-align: center;
+}
+
+main {
+  padding-bottom: 2rem;
+}
+
+section {
+  margin: 1.5rem 0;
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  background: linear-gradient(145deg, rgb(27 41 61 / 94%), rgb(16 24 39 / 96%));
+  box-shadow: var(--shadow-panel);
+}
+
+figure {
+  margin: 1.5rem auto;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  padding-left: 1.4rem;
+}
+
+li {
+  margin: 0.35rem 0;
+}
+
+/* 4. Typography */
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-text);
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  margin: 0 0 1rem;
+  color: var(--color-accent);
+  font-size: 2.6rem;
+  text-shadow: 0 0 22px rgb(101 230 210 / 25%);
+}
+
+h2 {
+  margin: 0 0 1.25rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  margin-top: 0;
+  color: var(--color-accent);
+  font-size: 1.35rem;
+}
+
+p {
+  max-width: 74ch;
+  color: var(--color-muted);
+}
+
+blockquote {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--color-accent);
+  background: rgb(9 13 22 / 48%);
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+/* 5. Header / Navigation */
+header nav ul,
+.map-navigation ul,
+#what-i-love > nav ul,
+#skills > nav ul,
+#contact ul {
+  padding: 0;
+  list-style: none;
+}
+
+header nav li,
+.map-navigation li,
+#what-i-love > nav li,
+#skills > nav li {
+  display: inline-block;
+  margin: 0.35rem;
+}
+
+nav a,
+#contact li a,
+article a,
+section > p > a {
+  display: inline-block;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: var(--color-background-secondary);
+  color: var(--color-text);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 160ms ease, border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
+}
+
+header nav a {
+  min-width: 6.5rem;
+  background: transparent;
+}
+
+/* 6. Home / Title Screen */
+#home {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  border-color: #477b7b;
+  background: radial-gradient(ellipse at center, #1b3445, #101827 70%);
+  text-align: center;
+}
+
+#home h2 {
+  border: 0;
+  color: var(--color-accent);
+  font-size: 2.7rem;
+}
+
+#home figure img {
+  display: block;
+  width: min(100%, 800px);
+  margin: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 28px rgb(101 230 210 / 12%);
+}
+
+#home > p {
+  margin: 1.25rem auto 0;
+  font-size: 1.25rem;
+}
+
+.map-location {
+  min-width: 8rem;
+  background: #162438;
+}
+
+.map-location-about,
+.map-location-skills {
+  border-color: #54728b;
+}
+
+.map-location-love,
+.map-location-contact {
+  border-color: #397f79;
+}
+
+.map-location-portfolio {
+  border-color: #84734b;
+}
+
+/* 7. Welcome / Main Menu */
+#home .map-navigation {
+  margin: 1.75rem 0;
+}
+
+.map-navigation a {
+  padding: 0.7rem 1rem;
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+/* 8. About / Character Profile */
+#about {
+  border-top: 3px solid #64b9cf;
+}
+
+.photo-collage {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: rgb(9 13 22 / 40%);
+  text-align: center;
+}
+
+.photo-collage img {
+  display: block;
+  width: min(100%, 340px);
+  margin: 1rem auto;
+  border: 2px solid var(--color-border);
+  border-radius: 6px;
+  box-shadow: 0 8px 20px rgb(0 0 0 / 32%);
+}
+
+#about dl {
+  max-width: 680px;
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-background-secondary);
+}
+
+#about dt {
+  margin-top: 0.65rem;
+  color: var(--color-accent);
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+#about dd {
+  margin-left: 0;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid rgb(53 71 91 / 65%);
+  color: var(--color-text);
+}
+
+#about blockquote p {
+  margin: 0;
+}
+
+/* 9. What I Love / Codex */
+#what-i-love {
+  border-top: 3px solid #8acb85;
+}
+
+#what-i-love > nav {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+#what-i-love > section {
+  margin: 1rem 0;
+  padding: 1.25rem;
+  background: rgb(10 18 27 / 72%);
+  box-shadow: none;
+}
+
+#what-i-love > section h3 {
+  margin-top: 0;
+  color: #a5e2a0;
+}
+
+#what-i-love > section p:last-child {
+  margin-bottom: 0;
+}
+
+#what-i-love > section p:last-child a {
+  font-size: 1rem;
+}
+
+/* 10. Skills / Character Stats */
+#skills {
+  border-top: 3px solid #d4ae63;
+}
+
+#skills > nav {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+#skills > section {
+  margin: 1rem 0;
+  padding: 1.15rem 1.25rem;
+  border-left: 3px solid #d4ae63;
+  background: rgb(10 18 27 / 72%);
+  box-shadow: none;
+}
+
+#skills > section h3 {
+  margin-top: 0;
+  color: #e2c27e;
+}
+
+#skills > section p:last-child {
+  margin-bottom: 0;
+}
+
+/* 11. Portfolio / Mission Archive */
+#portfolio {
+  border-top: 3px solid #e29c64;
+}
+
+#portfolio > h3 {
+  color: #eac08d;
+}
+
+#portfolio article {
+  margin: 1.25rem 0;
+  padding: 1.4rem;
+  border: 1px solid #6e5749;
+  border-radius: var(--border-radius);
+  background: linear-gradient(135deg, #202a37, #151c28);
+  box-shadow: 0 8px 18px rgb(0 0 0 / 24%);
+}
+
+#portfolio article h4 {
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+#portfolio article p:last-child {
+  margin-bottom: 0;
+}
+
+#portfolio article a {
+  border-color: #8e6a4f;
+  background: #35291f;
+}
+
+/* 12. Contact / End Credits */
+#contact {
+  border-top: 3px solid var(--color-accent);
+  text-align: center;
+}
+
+#contact > p {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#contact ul {
+  margin: 1.5rem 0;
+}
+
+#contact li {
+  display: inline-block;
+  margin: 0.35rem;
+}
+
+#contact li a {
+  min-width: 7rem;
+}
+
+/* 13. Footer */
+footer {
+  padding: 1rem 0 2rem;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-muted);
+  text-align: center;
+}
+
+footer p {
+  margin: 0.25rem auto;
+  font-size: 1rem;
+}
+
+/* 14. States / Accessibility */
+a {
+  color: var(--color-accent);
+}
+
+a:visited {
+  color: #a9dcd6;
+}
+
+a:hover {
+  border-color: var(--color-accent);
+  background-color: #203445;
+  color: var(--color-accent-hover);
+  transform: translateY(-1px);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--color-accent-hover);
+  outline-offset: 3px;
+}
+
+img:hover {
+  opacity: 0.94;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-background);
+}
+
+/* LAB CHECK
+20+ rulesets: Yes
+5+ CSS custom properties: Yes
+3+ selector types: Yes
+Flexbox used: No
+Grid used: No
+Media queries used: No
+*/
