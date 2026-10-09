@@ -126,7 +126,9 @@ blockquote {
 
 /* 5. Header / Navigation */
 header nav ul,
-.map-navigation ul,
+.main-menu ul,
+.codex-navigation ul,
+.stats-navigation ul,
 #what-i-love > nav ul,
 #skills > nav ul,
 #contact ul {
