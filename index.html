@@ -13,6 +13,7 @@
     <nav aria-label="Main navigation">
       <ul>
         <li><a href="#home">Home</a></li>
+        <li><a href="#welcome">Welcome</a></li>
         <li><a href="#about">About Me</a></li>
         <li><a href="#what-i-love">What I Love</a></li>
         <li><a href="#skills">Skills / Resume</a></li>
@@ -24,24 +25,27 @@
 
   <main>
     <section id="home" aria-labelledby="home-heading">
-      <h2 id="home-heading">Welcome</h2>
-      <figure>
-        <img src="images/portfolio-map.png" alt="Fantasy map of an island world used to navigate Palash Mathur's portfolio">
-      </figure>
-      <nav class="map-navigation" aria-label="Explore portfolio locations">
-        <ul>
-          <li><a class="map-location map-location-about" href="#about">About Me</a></li>
-          <li><a class="map-location map-location-love" href="#what-i-love">What I Love</a></li>
-          <li><a class="map-location map-location-skills" href="#skills">Skills / Resume</a></li>
-          <li><a class="map-location map-location-portfolio" href="#portfolio">Portfolio</a></li>
-          <li><a class="map-location map-location-contact" href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <p>Choose a location to explore.</p>
+      <h2 id="home-heading">Palash Mathur Portfolio</h2>
+      <p>Press Play to Continue</p>
+      <a class="play-button" href="#welcome">PLAY</a>
     </section>
 
-    <section id="about" aria-labelledby="about-heading">
-      <h2 id="about-heading">About Me</h2>
+    <section id="welcome" aria-labelledby="welcome-heading">
+      <h2 id="welcome-heading">Welcome</h2>
+      <nav class="main-menu" aria-label="Main menu">
+        <ul>
+          <li><a class="menu-option" href="#about">About Me</a></li>
+          <li><a class="menu-option" href="#what-i-love">What I Love</a></li>
+          <li><a class="menu-option" href="#skills">Skills / Resume</a></li>
+          <li><a class="menu-option" href="#portfolio">Portfolio</a></li>
+          <li><a class="menu-option" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <p><a href="#home">Back to Title Screen</a></p>
+    </section>
+
+    <section id="about" class="character-profile" aria-labelledby="about-heading">
+      <h2 id="about-heading">Character Profile</h2>
       <div class="photo-collage">
         <img src="images/palash-1.jpeg" alt="Palash Mathur, portrait photo one">
         <img src="images/palash-2.jpeg" alt="Palash Mathur, portrait photo two">
@@ -61,12 +65,12 @@
       <blockquote>
         <p>There is so much to talk about that words can't even begin to express it! It's honestly tough being an interesting person :P</p>
       </blockquote>
-      <p><a href="#home">Back to Home</a></p>
+      <p><a href="#welcome">Back to Main Menu</a></p>
     </section>
 
     <section id="what-i-love" aria-labelledby="what-i-love-heading">
-      <h2 id="what-i-love-heading">What I Love</h2>
-      <nav aria-label="What I love topics">
+      <h2 id="what-i-love-heading">What I Love / Codex</h2>
+      <nav class="codex-navigation" aria-label="What I love topics">
         <ul>
           <li><a href="#love-coding">Coding</a></li>
           <li><a href="#love-gaming">Gaming</a></li>
@@ -75,37 +79,37 @@
           <li><a href="#love-music">Music</a></li>
         </ul>
       </nav>
-      <section id="love-coding" aria-labelledby="love-coding-heading">
+      <section id="love-coding" class="codex-entry" aria-labelledby="love-coding-heading">
         <h3 id="love-coding-heading">Coding</h3>
         <p>I love solving problems and I love computers, coding and me are basically soulmates &lt;3</p>
-        <p><a href="#what-i-love">Back to What I Love</a></p>
+        <p><a href="#what-i-love">Back to Codex</a></p>
       </section>
-      <section id="love-gaming" aria-labelledby="love-gaming-heading">
+      <section id="love-gaming" class="codex-entry" aria-labelledby="love-gaming-heading">
         <h3 id="love-gaming-heading">Gaming</h3>
         <p>If there exists a universe where games don't exist, I don't exist. #GamesAreArt</p>
-        <p><a href="#what-i-love">Back to What I Love</a></p>
+        <p><a href="#what-i-love">Back to Codex</a></p>
       </section>
-      <section id="love-anime" aria-labelledby="love-anime-heading">
+      <section id="love-anime" class="codex-entry" aria-labelledby="love-anime-heading">
         <h3 id="love-anime-heading">Anime</h3>
         <p>Still waiting for my 12 episode anime arc...</p>
-        <p><a href="#what-i-love">Back to What I Love</a></p>
+        <p><a href="#what-i-love">Back to Codex</a></p>
       </section>
-      <section id="love-manga" aria-labelledby="love-manga-heading">
+      <section id="love-manga" class="codex-entry" aria-labelledby="love-manga-heading">
         <h3 id="love-manga-heading">Manga / Manhwa</h3>
         <p>I love reading and I think Manga/Manhwas are such an underrated form of visual literature.</p>
-        <p><a href="#what-i-love">Back to What I Love</a></p>
+        <p><a href="#what-i-love">Back to Codex</a></p>
       </section>
-      <section id="love-music" aria-labelledby="love-music-heading">
+      <section id="love-music" class="codex-entry" aria-labelledby="love-music-heading">
         <h3 id="love-music-heading">Music</h3>
         <p>Music is my favorite type of stimming! If you see me without headphones that means the songs are too fire and I can't concentrate Lol</p>
-        <p><a href="#what-i-love">Back to What I Love</a></p>
+        <p><a href="#what-i-love">Back to Codex</a></p>
       </section>
-      <p><a href="#home">Back to Home</a></p>
+      <p><a href="#welcome">Back to Main Menu</a></p>
     </section>
 
     <section id="skills" aria-labelledby="skills-heading">
-      <h2 id="skills-heading">Skills / Resume</h2>
-      <nav aria-label="Skills and resume topics">
+      <h2 id="skills-heading">Character Stats / Skill Tree</h2>
+      <nav class="stats-navigation" aria-label="Skills and resume topics">
         <ul>
           <li><a href="#skills-programming">Programming</a></li>
           <li><a href="#skills-game-development">Game Development</a></li>
@@ -115,68 +119,73 @@
           <li><a href="#skills-resume">Resume</a></li>
         </ul>
       </nav>
-      <section id="skills-programming" aria-labelledby="skills-programming-heading">
+      <section id="skills-programming" class="stat-category" aria-labelledby="skills-programming-heading">
         <h3 id="skills-programming-heading">Programming</h3>
         <p>Content will be added from my resume.</p>
-        <p><a href="#skills">Back to Skills / Resume</a></p>
+        <p><a href="#skills">Back to Character Stats</a></p>
       </section>
-      <section id="skills-game-development" aria-labelledby="skills-game-development-heading">
+      <section id="skills-game-development" class="stat-category" aria-labelledby="skills-game-development-heading">
         <h3 id="skills-game-development-heading">Game Development</h3>
         <p>Content will be added from my resume.</p>
-        <p><a href="#skills">Back to Skills / Resume</a></p>
+        <p><a href="#skills">Back to Character Stats</a></p>
       </section>
-      <section id="skills-tools" aria-labelledby="skills-tools-heading">
+      <section id="skills-tools" class="stat-category" aria-labelledby="skills-tools-heading">
         <h3 id="skills-tools-heading">Tools</h3>
         <p>Content will be added from my resume.</p>
-        <p><a href="#skills">Back to Skills / Resume</a></p>
+        <p><a href="#skills">Back to Character Stats</a></p>
       </section>
-      <section id="skills-experience" aria-labelledby="skills-experience-heading">
+      <section id="skills-experience" class="stat-category" aria-labelledby="skills-experience-heading">
         <h3 id="skills-experience-heading">Experience</h3>
         <p>Content will be added from my resume.</p>
-        <p><a href="#skills">Back to Skills / Resume</a></p>
+        <p><a href="#skills">Back to Character Stats</a></p>
       </section>
-      <section id="skills-education" aria-labelledby="skills-education-heading">
+      <section id="skills-education" class="stat-category" aria-labelledby="skills-education-heading">
         <h3 id="skills-education-heading">Education</h3>
         <p>Content will be added from my resume.</p>
-        <p><a href="#skills">Back to Skills / Resume</a></p>
+        <p><a href="#skills">Back to Character Stats</a></p>
       </section>
-      <section id="skills-resume" aria-labelledby="skills-resume-heading">
+      <section id="skills-resume" class="stat-category" aria-labelledby="skills-resume-heading">
         <h3 id="skills-resume-heading">Resume</h3>
         <p>Content will be added from my resume.</p>
-        <p><a href="#skills">Back to Skills / Resume</a></p>
+        <p><a href="#skills">Back to Character Stats</a></p>
       </section>
-      <p><a href="#home">Back to Home</a></p>
+      <p><a href="#welcome">Back to Main Menu</a></p>
     </section>
 
     <section id="portfolio" aria-labelledby="portfolio-heading">
-      <h2 id="portfolio-heading">Portfolio</h2>
+      <h2 id="portfolio-heading">Mission Archive</h2>
       <h3>Cool Things I Did</h3>
-      <article>
+      <article class="mission-card">
         <h4>Audio Reactive Lighting</h4>
         <p>I made a Unity script that takes waveform and spectrum data using GetSpectrumData(), processes the audio frequency information through Fast Fourier Transform analysis with FFTWindow, and uses the processed data to create a custom audio-reactive lighting effect.</p>
         <p>The lighting system is also gated by an in-game mechanic, allowing the visual effects to respond to both the music and gameplay.</p>
         <p><a href="https://mediaspace.msu.edu/media/t/1_z6bxtzyx?st=3780" target="_blank" rel="noopener noreferrer">Watch the Video</a></p>
       </article>
-      <article>
+      <article class="mission-card">
         <h4>Audio Based Level Generation</h4>
         <p>I built an audio-driven level generation system for Parry Hero that analyzes a song before gameplay and converts its frequency data into level decisions.</p>
         <p>Bass, mid, and high-frequency activity are processed over time and used to influence gameplay elements such as routes, obstacles, and platforming sections.</p>
         <p>The goal was to make each level feel connected to the structure and energy of the music without turning the game into a strict rhythm game.</p>
         <p><a href="https://palash-mathur.itch.io/mi-445" target="_blank" rel="noopener noreferrer">View Parry Hero on itch.io</a></p>
       </article>
-      <p><a href="#home">Back to Home</a></p>
+      <p><a href="#welcome">Back to Main Menu</a></p>
     </section>
 
     <section id="contact" aria-labelledby="contact-heading">
-      <h2 id="contact-heading">Contact</h2>
+      <h2 id="contact-heading">End Credits</h2>
+      <p>Created by</p>
+      <h3>Palash Mathur</h3>
+      <p>Games and Interactive Media<br>Michigan State University</p>
       <p>Want to talk games, code, projects, or just say hi? Feel free to reach out.</p>
+      <h3>Contact / Connect</h3>
       <ul>
         <li><a href="https://github.com/GoodGuyGreeny" target="_blank" rel="noopener noreferrer">GitHub</a></li>
         <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
         <li><a href="mailto:mathurpa@msu.edu">Email</a></li>
         <li><a href="https://palash-mathur.itch.io" target="_blank" rel="noopener noreferrer">itch.io</a></li>
       </ul>
-      <p><a href="#home">Back to Home</a></p>
+      <p>Thanks for playing.</p>
+      <p><a class="credits-link" href="#welcome">Return to Main Menu</a></p>
     </section>
   </main>
 
