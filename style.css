@@ -2971,6 +2971,13 @@ main > section {
   }
 }
 
+/*
+ * AI assistance: generated and iteratively refined the lab styling below,
+ * including themes, startup and transition overlays, the section rail,
+ * redesigned portfolio sections, responsive layouts, and focus presentation.
+ * Source: OpenAI, ChatGPT/Codex assistance, https://chatgpt.com/ (2026-11-12).
+ * Earlier coursework styles above this comment are outside this attribution.
+ */
 /* 10.6 Lab: theme controls and the inverse HUD palette.
    Keep these after the earlier design rules so both themes cover legacy colors. */
 :root {

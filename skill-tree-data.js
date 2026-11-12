@@ -1,3 +1,8 @@
+/*
+ * AI assistance: organized skill and project information into the node hierarchy and connected paths used by the interactive tree.
+ * Source: OpenAI, ChatGPT/Codex assistance, https://chatgpt.com/ (2026-11-12).
+ * Developed iteratively from the portfolio owner's requests and feedback.
+ */
 window.portfolioSkillTree = [
   {
     "id": "core",

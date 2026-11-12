@@ -1,3 +1,8 @@
+/*
+ * AI assistance: generated and refined theme persistence, local panel selection, animated section navigation, progress controls, and section entrance effects, including keyboard and reduced-motion handling.
+ * Source: OpenAI, ChatGPT/Codex assistance, https://chatgpt.com/ (2026-11-12).
+ * Developed iteratively from the portfolio owner's requests and feedback.
+ */
 (() => {
   "use strict";
 

@@ -1,3 +1,8 @@
+/*
+ * AI assistance: generated and refined the CRT startup, typed loading sequence, skip controls, and startup cleanup.
+ * Source: OpenAI, ChatGPT/Codex assistance, https://chatgpt.com/ (2026-11-12).
+ * Developed iteratively from the portfolio owner's requests and feedback.
+ */
 (() => {
   "use strict";
   const root = document.documentElement;

@@ -1,3 +1,8 @@
+/*
+ * AI assistance: generated and refined profile entrance effects, portrait selection, image loading, and photo transitions.
+ * Source: OpenAI, ChatGPT/Codex assistance, https://chatgpt.com/ (2026-11-12).
+ * Developed iteratively from the portfolio owner's requests and feedback.
+ */
 (() => {
   "use strict";
   const profile = document.querySelector("#about");

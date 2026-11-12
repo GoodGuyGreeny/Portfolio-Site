@@ -1,3 +1,8 @@
+/*
+ * AI assistance: generated and refined progressive node discovery, project connections, map layout, free panning, zoom, reset, and keyboard interaction; removed individual detail panels.
+ * Source: OpenAI, ChatGPT/Codex assistance, https://chatgpt.com/ (2026-11-12).
+ * Developed iteratively from the portfolio owner's requests and feedback.
+ */
 (() => {
   'use strict';
   const nodes = window.portfolioSkillTree;
