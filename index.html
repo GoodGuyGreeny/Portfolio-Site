@@ -5,187 +5,199 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Palash Mathur's portfolio of game development, code, and creative interests.">
   <title>Palash Mathur Portfolio</title>
+  <script src="boot.js"></script>
   <link rel="stylesheet" href="style.css">
+  <script defer src="vendor/typed.umd.js"></script>
+  <script defer src="vendor/gsap.min.js"></script>
+  <script defer src="script.js"></script>
+  <script defer src="profile.js"></script>
+  <link rel="stylesheet" href="skill-tree.css">
+  <script defer src="skill-tree-data.js"></script>
+  <script defer src="skill-tree.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Palash Mathur Portfolio</h1>
-    <nav aria-label="Main navigation">
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#welcome">Welcome</a></li>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#what-i-love">What I Love</a></li>
-        <li><a href="#skills">Skills / Resume</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <header class="utility-controls" aria-label="Display settings">
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false" hidden>MODE: DARK</button>
   </header>
 
   <main>
     <section id="home" aria-labelledby="home-heading">
-      <h2 id="home-heading">Palash Mathur Portfolio</h2>
-      <p>Press Play to Continue</p>
-      <a class="play-button" href="#welcome">PLAY</a>
+      <div class="home-grid" aria-hidden="true"></div>
+      <div class="home-hud home-hud--top" aria-hidden="true"><span>PM / PERSONAL INTERFACE</span><span><i></i> SYSTEM ONLINE</span></div>
+      <div class="home-title-card">
+        <p class="home-kicker">CODE. CREATE. PLAY.</p>
+        <h2 id="home-heading"><span class="home-firstname">PALASH</span><span class="home-lastname">MATHUR</span><span class="home-edition">THE PORTFOLIO</span></h2>
+        <p class="home-description">Game development &amp; interactive media.</p>
+        <div class="home-launch">
+          <p class="terminal-prompt"><span class="sr-only">Press Play to Continue</span><span id="title-prompt" aria-hidden="true">Press Play to Continue</span></p>
+          <a class="play-button" href="#welcome"><span class="play-icon" aria-hidden="true">&#9654;</span><span>PLAY</span><span class="play-arrow" aria-hidden="true">&#8599;</span></a>
+        </div>
+      </div>
+      <div class="home-hud home-hud--bottom"><span>GAMES &amp; INTERACTIVE MEDIA<br><strong>MICHIGAN STATE UNIVERSITY</strong></span><span class="home-navigation-hint">SCROLL TO CHANGE SECTIONS<span aria-hidden="true"> &#8595;</span></span></div>
     </section>
 
     <section id="welcome" aria-labelledby="welcome-heading">
-      <h2 id="welcome-heading">Welcome</h2>
-      <nav class="main-menu" aria-label="Main menu">
-        <ul>
-          <li><a class="menu-option" href="#about">About Me</a></li>
-          <li><a class="menu-option" href="#what-i-love">What I Love</a></li>
-          <li><a class="menu-option" href="#skills">Skills / Resume</a></li>
-          <li><a class="menu-option" href="#portfolio">Portfolio</a></li>
-          <li><a class="menu-option" href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <p><a href="#home">Back to Title Screen</a></p>
+      <div class="welcome-topline"><span>PM / NAVIGATION TERMINAL</span><span>SELECT A DESTINATION</span></div>
+      <div class="welcome-layout">
+        <div class="welcome-intro">
+          <p class="welcome-eyebrow">SESSION ACTIVE <span aria-hidden="true">// 01</span></p>
+          <h2 id="welcome-heading">WELCOME<br><span>TO MY WORLD.</span></h2>
+          <p class="welcome-copy">The hands behind code<br>Small sparks of inspiration<br>Take shape as I play.</p>
+          <div class="welcome-emblem" aria-hidden="true"><span>PM</span><small>PLAYER CONNECTED</small></div>
+          <p class="welcome-return"><a href="#home"><span aria-hidden="true">&#8592;</span> Back to Title Screen</a></p>
+        </div>
+        <nav class="main-menu" aria-label="Main menu">
+          <p class="menu-directory"><span>DIRECTORY</span><span>05 ENTRIES</span></p>
+          <ul>
+            <li><a class="menu-option" href="#about"><span class="menu-number" aria-hidden="true">01</span><span class="menu-text"><strong>Character Profile</strong><span>Meet the player behind the projects.</span></span><span class="menu-chevron" aria-hidden="true">&#8599;</span></a></li>
+            <li><a class="menu-option" href="#what-i-love"><span class="menu-number" aria-hidden="true">02</span><span class="menu-text"><strong>The Codex</strong><span>Games, code, music &amp; everything in between.</span></span><span class="menu-chevron" aria-hidden="true">&#8599;</span></a></li>
+            <li><a class="menu-option" href="#skills"><span class="menu-number" aria-hidden="true">03</span><span class="menu-text"><strong>Skill Tree</strong><span>Discover skills &amp; connected projects.</span></span><span class="menu-chevron" aria-hidden="true">&#8599;</span></a></li>
+            <li><a class="menu-option" href="#portfolio"><span class="menu-number" aria-hidden="true">04</span><span class="menu-text"><strong>Mission Archive</strong><span>Game systems, experiments &amp; projects.</span></span><span class="menu-chevron" aria-hidden="true">&#8599;</span></a></li>
+            <li><a class="menu-option" href="#contact"><span class="menu-number" aria-hidden="true">05</span><span class="menu-text"><strong>Open a Channel</strong><span>Connect, collaborate, or just say hi.</span></span><span class="menu-chevron" aria-hidden="true">&#8599;</span></a></li>
+          </ul>
+          <p class="menu-footer">YOUR NEXT STOP IS UP TO YOU.</p>
+        </nav>
+      </div>
     </section>
 
     <section id="about" class="character-profile" aria-labelledby="about-heading">
+      <div class="dossier-topline"><span>PERSONNEL DATABASE / 01</span><span class="dossier-status">PROFILE ONLINE</span></div>
       <h2 id="about-heading">Character Profile</h2>
-      <div class="photo-collage">
-        <img src="images/palash-1.jpeg" alt="Palash Mathur, portrait photo one">
-        <img src="images/palash-2.jpeg" alt="Palash Mathur, portrait photo two">
-        <img src="images/palash-3.jpeg" alt="Palash Mathur, portrait photo three">
-        <img src="images/palash-4.jpeg" alt="Palash Mathur, portrait photo four">
+      <div class="dossier-grid">
+        <div class="dossier-visual">
+          <div class="portrait-stage">
+          <div class="dossier-portrait">
+            <img id="profile-portrait" src="images/palash-1.jpeg" alt="Palash Mathur, portrait photo one">
+            <div class="dossier-scan" aria-hidden="true"></div>
+            <span class="portrait-id" aria-hidden="true">PM_01 / VISUAL RECORD</span>
+          </div>
+          </div>
+          <div class="portrait-selector" role="group" aria-label="Choose profile photo">
+            <button type="button" data-portrait="1" aria-label="Show portrait one" aria-pressed="true"><img src="images/palash-1.jpeg" alt=""><span>01</span></button>
+            <button type="button" data-portrait="2" aria-label="Show portrait two" aria-pressed="false"><img src="images/palash-2.jpeg" alt=""><span>02</span></button>
+            <button type="button" data-portrait="3" aria-label="Show portrait three" aria-pressed="false"><img src="images/palash-3.jpeg" alt=""><span>03</span></button>
+            <button type="button" data-portrait="4" aria-label="Show portrait four" aria-pressed="false"><img src="images/palash-4.jpeg" alt=""><span>04</span></button>
+          </div>
+        </div>
+        <div class="dossier-info">
+          <p class="dossier-eyebrow">PLAYER 01 <span>// GAME DEVELOPER</span></p>
+          <h3 class="dossier-name">PALASH<br><span>MATHUR</span></h3>
+          <dl class="dossier-facts">
+            <div><dt>Program</dt><dd>Games and Interactive Media</dd></div>
+            <div><dt>University</dt><dd>Michigan State University</dd></div>
+            <div><dt>Age</dt><dd>19</dd></div>
+          </dl>
+          <div class="dossier-interests" aria-label="Interests"><span>CODE</span><span>GAMES</span><span>MUSIC</span></div>
+          <blockquote class="dossier-quote"><p>There is so much to talk about that words can't even begin to express it! It's honestly tough being an interesting person :P</p></blockquote>
+          <p class="dossier-signoff">END OF RECORD <span aria-hidden="true">////////////////</span></p>
+        </div>
       </div>
-      <dl>
-        <dt>Name</dt>
-        <dd>Palash Mathur</dd>
-        <dt>Age</dt>
-        <dd>19</dd>
-        <dt>Program</dt>
-        <dd>Games and Interactive Media</dd>
-        <dt>University</dt>
-        <dd>Michigan State University</dd>
-      </dl>
-      <blockquote>
-        <p>There is so much to talk about that words can't even begin to express it! It's honestly tough being an interesting person :P</p>
-      </blockquote>
-      <p><a href="#welcome">Back to Main Menu</a></p>
+      <p class="dossier-return"><a href="#welcome">Back to Main Menu</a></p>
     </section>
 
     <section id="what-i-love" aria-labelledby="what-i-love-heading">
-      <h2 id="what-i-love-heading">What I Love / Codex</h2>
+      <h2 id="what-i-love-heading"><span class="archive-eyebrow">PERSONAL ARCHIVE / WHAT I LOVE</span>The Codex</h2>
       <nav class="codex-navigation" aria-label="What I love topics">
         <ul>
-          <li><a href="#love-coding">Coding</a></li>
-          <li><a href="#love-gaming">Gaming</a></li>
-          <li><a href="#love-anime">Anime</a></li>
-          <li><a href="#love-manga">Manga / Manhwa</a></li>
-          <li><a href="#love-music">Music</a></li>
+          <li><a href="#love-coding"><span class="archive-index" aria-hidden="true">01</span><span>Coding</span><span class="archive-pointer" aria-hidden="true">&#10022;</span></a></li>
+          <li><a href="#love-gaming"><span class="archive-index" aria-hidden="true">02</span><span>Gaming</span><span class="archive-pointer" aria-hidden="true">&#10022;</span></a></li>
+          <li><a href="#love-anime"><span class="archive-index" aria-hidden="true">03</span><span>Anime</span><span class="archive-pointer" aria-hidden="true">&#10022;</span></a></li>
+          <li><a href="#love-manga"><span class="archive-index" aria-hidden="true">04</span><span>Manga / Manhwa</span><span class="archive-pointer" aria-hidden="true">&#10022;</span></a></li>
+          <li><a href="#love-music"><span class="archive-index" aria-hidden="true">05</span><span>Music</span><span class="archive-pointer" aria-hidden="true">&#10022;</span></a></li>
         </ul>
       </nav>
       <section id="love-coding" class="codex-entry" aria-labelledby="love-coding-heading">
-        <h3 id="love-coding-heading">Coding</h3>
+        <div class="archive-entry-meta"><span>ENTRY 01 / 05</span><span>PERSONAL RECORD</span></div><div class="archive-sigil" aria-hidden="true">&lt;/&gt;</div><h3 id="love-coding-heading">Coding</h3>
         <p>I love solving problems and I love computers, coding and me are basically soulmates &lt;3</p>
         <p><a href="#what-i-love">Back to Codex</a></p>
       </section>
       <section id="love-gaming" class="codex-entry" aria-labelledby="love-gaming-heading">
-        <h3 id="love-gaming-heading">Gaming</h3>
+        <div class="archive-entry-meta"><span>ENTRY 02 / 05</span><span>PERSONAL RECORD</span></div><div class="archive-sigil" aria-hidden="true">&#10022;</div><h3 id="love-gaming-heading">Gaming</h3>
         <p>If there exists a universe where games don't exist, I don't exist. #GamesAreArt</p>
         <p><a href="#what-i-love">Back to Codex</a></p>
       </section>
       <section id="love-anime" class="codex-entry" aria-labelledby="love-anime-heading">
-        <h3 id="love-anime-heading">Anime</h3>
+        <div class="archive-entry-meta"><span>ENTRY 03 / 05</span><span>PERSONAL RECORD</span></div><div class="archive-sigil" aria-hidden="true">&#9734;</div><h3 id="love-anime-heading">Anime</h3>
         <p>Still waiting for my 12 episode anime arc...</p>
         <p><a href="#what-i-love">Back to Codex</a></p>
       </section>
       <section id="love-manga" class="codex-entry" aria-labelledby="love-manga-heading">
-        <h3 id="love-manga-heading">Manga / Manhwa</h3>
+        <div class="archive-entry-meta"><span>ENTRY 04 / 05</span><span>PERSONAL RECORD</span></div><div class="archive-sigil" aria-hidden="true">&#10070;</div><h3 id="love-manga-heading">Manga / Manhwa</h3>
         <p>I love reading and I think Manga/Manhwas are such an underrated form of visual literature.</p>
         <p><a href="#what-i-love">Back to Codex</a></p>
       </section>
       <section id="love-music" class="codex-entry" aria-labelledby="love-music-heading">
-        <h3 id="love-music-heading">Music</h3>
+        <div class="archive-entry-meta"><span>ENTRY 05 / 05</span><span>PERSONAL RECORD</span></div><div class="archive-sigil" aria-hidden="true">&#9835;</div><h3 id="love-music-heading">Music</h3>
         <p>Music is my favorite type of stimming! If you see me without headphones that means the songs are too fire and I can't concentrate Lol</p>
         <p><a href="#what-i-love">Back to Codex</a></p>
       </section>
       <p><a href="#welcome">Back to Main Menu</a></p>
     </section>
 
-    <section id="skills" aria-labelledby="skills-heading">
-      <h2 id="skills-heading">Character Stats / Skill Tree</h2>
-      <nav class="stats-navigation" aria-label="Skills and resume topics">
-        <ul>
-          <li><a href="#skills-programming">Programming</a></li>
-          <li><a href="#skills-game-development">Game Development</a></li>
-          <li><a href="#skills-tools">Tools</a></li>
-          <li><a href="#skills-experience">Experience</a></li>
-          <li><a href="#skills-education">Education</a></li>
-          <li><a href="#skills-resume">Resume</a></li>
-        </ul>
-      </nav>
-      <section id="skills-programming" class="stat-category" aria-labelledby="skills-programming-heading">
-        <h3 id="skills-programming-heading">Programming</h3>
-        <p>Content will be added from my resume.</p>
-        <p><a href="#skills">Back to Character Stats</a></p>
-      </section>
-      <section id="skills-game-development" class="stat-category" aria-labelledby="skills-game-development-heading">
-        <h3 id="skills-game-development-heading">Game Development</h3>
-        <p>Content will be added from my resume.</p>
-        <p><a href="#skills">Back to Character Stats</a></p>
-      </section>
-      <section id="skills-tools" class="stat-category" aria-labelledby="skills-tools-heading">
-        <h3 id="skills-tools-heading">Tools</h3>
-        <p>Content will be added from my resume.</p>
-        <p><a href="#skills">Back to Character Stats</a></p>
-      </section>
-      <section id="skills-experience" class="stat-category" aria-labelledby="skills-experience-heading">
-        <h3 id="skills-experience-heading">Experience</h3>
-        <p>Content will be added from my resume.</p>
-        <p><a href="#skills">Back to Character Stats</a></p>
-      </section>
-      <section id="skills-education" class="stat-category" aria-labelledby="skills-education-heading">
-        <h3 id="skills-education-heading">Education</h3>
-        <p>Content will be added from my resume.</p>
-        <p><a href="#skills">Back to Character Stats</a></p>
-      </section>
-      <section id="skills-resume" class="stat-category" aria-labelledby="skills-resume-heading">
-        <h3 id="skills-resume-heading">Resume</h3>
-        <p>Content will be added from my resume.</p>
-        <p><a href="#skills">Back to Character Stats</a></p>
-      </section>
-      <p><a href="#welcome">Back to Main Menu</a></p>
+    <section id="skills" class="skill-atlas" aria-labelledby="skills-heading">
+      <header class="atlas-heading"><div><p class="atlas-eyebrow">PM / PASSIVE SKILL ATLAS</p><h2 id="skills-heading">Skill tree</h2></div><p>Every path is a skill already practiced.<br>Activate a node to discover what connects.</p></header>
+      <div class="atlas-toolbar" role="group" aria-label="Skill tree controls">
+        <span id="atlas-count" role="status" aria-live="polite">Begin with the core</span>
+        <button type="button" id="atlas-out" aria-label="Zoom out">−</button><button type="button" id="atlas-in" aria-label="Zoom in">+</button><button type="button" id="atlas-fit">Fit discovered</button><button type="button" id="atlas-reset">Start over</button>
+      </div>
+      <div class="atlas-layout">
+        <div class="atlas-viewport" tabindex="0" role="region" aria-label="Interactive skill tree. Drag to pan, or use arrow keys. Tab to nodes and press Enter to discover." aria-describedby="atlas-help"><div class="atlas-space"><div class="atlas-world"><svg class="atlas-edges" width="2600" height="2400" aria-hidden="true"></svg><div class="atlas-nodes"></div></div></div></div>
+      </div>
+      <footer class="atlas-footer"><p id="atlas-help">Click to discover · Drag to pan · + / − to zoom · Tab + Enter to explore</p><a href="#welcome">Back to Main Menu ↗</a></footer>
+      <noscript><p>Enable JavaScript to explore the interactive tree. Skills include Gameplay &amp; Combat, Systems Architecture, Audio &amp; Game Feel, Tools &amp; Optimization, AI &amp; Decision-Making, and Collaboration &amp; Supporting Skills.</p></noscript>
     </section>
 
     <section id="portfolio" aria-labelledby="portfolio-heading">
-      <h2 id="portfolio-heading">Mission Archive</h2>
-      <h3>Cool Things I Did</h3>
-      <article class="mission-card">
-        <h4>Audio Reactive Lighting</h4>
-        <p>I made a Unity script that takes waveform and spectrum data using GetSpectrumData(), processes the audio frequency information through Fast Fourier Transform analysis with FFTWindow, and uses the processed data to create a custom audio-reactive lighting effect.</p>
-        <p>The lighting system is also gated by an in-game mechanic, allowing the visual effects to respond to both the music and gameplay.</p>
-        <p><a href="https://mediaspace.msu.edu/media/t/1_z6bxtzyx?st=3780" target="_blank" rel="noopener noreferrer">Watch the Video</a></p>
-      </article>
-      <article class="mission-card">
-        <h4>Audio Based Level Generation</h4>
-        <p>I built an audio-driven level generation system for Parry Hero that analyzes a song before gameplay and converts its frequency data into level decisions.</p>
-        <p>Bass, mid, and high-frequency activity are processed over time and used to influence gameplay elements such as routes, obstacles, and platforming sections.</p>
-        <p>The goal was to make each level feel connected to the structure and energy of the music without turning the game into a strict rhythm game.</p>
-        <p><a href="https://palash-mathur.itch.io/mi-445" target="_blank" rel="noopener noreferrer">View Parry Hero on itch.io</a></p>
-      </article>
-      <p><a href="#welcome">Back to Main Menu</a></p>
+      <div class="mission-topline"><span>PROJECT DATABASE</span><span>02 RECORDS AVAILABLE</span></div>
+      <div class="mission-heading"><h2 id="portfolio-heading">Mission Archive</h2></div>
+      <div class="mission-grid">
+        <article class="mission-card">
+          <div class="mission-record"><span>MISSION / 001</span><span>UNITY SYSTEM</span></div>
+          <div class="mission-body">
+            <h3>Audio Reactive Lighting</h3>
+            <p class="mission-summary">Making a game world respond to the music.</p>
+            <p>A Unity script reads waveform and spectrum data with GetSpectrumData() and FFTWindow analysis to drive custom lighting effects.</p>
+            <p>An in-game mechanic gates the system, so the lighting responds to both audio and gameplay.</p>
+            <ul class="mission-tags" aria-label="Project topics"><li>UNITY</li><li>AUDIO ANALYSIS</li><li>LIGHTING</li></ul>
+            <a class="mission-action" href="https://mediaspace.msu.edu/media/t/1_z6bxtzyx?st=3780" target="_blank" rel="noopener noreferrer"><span>Watch the demo</span><span aria-hidden="true">&#8599;</span></a>
+          </div>
+        </article>
+        <article class="mission-card">
+          <div class="mission-record"><span>MISSION / 002</span><span>PARRY HERO</span></div>
+          <div class="mission-body">
+            <h3>Music-Driven Level Planning</h3>
+            <p class="mission-summary">An experiment in planning levels around music.</p>
+            <p>Parry Hero analyzes songs before gameplay, using bass, mid, and high-frequency activity to shape routes, obstacles, and platforming sections.</p>
+            <p>The goal: connect each level to the music without making it a strict rhythm game.</p>
+            <ul class="mission-tags" aria-label="Project topics"><li>AUDIO ANALYSIS</li><li>LEVEL GENERATION</li><li>GAMEPLAY</li></ul>
+            <a class="mission-action" href="https://palash-mathur.itch.io/mi-445" target="_blank" rel="noopener noreferrer"><span>View Parry Hero on itch.io</span><span aria-hidden="true">&#8599;</span></a>
+          </div>
+        </article>
+      </div>
+      <p class="mission-return"><a href="#welcome">Back to Main Menu</a></p>
     </section>
 
     <section id="contact" aria-labelledby="contact-heading">
-      <h2 id="contact-heading">End Credits</h2>
-      <p>Created by</p>
-      <h3>Palash Mathur</h3>
-      <p>Games and Interactive Media<br>Michigan State University</p>
-      <p>Want to talk games, code, projects, or just say hi? Feel free to reach out.</p>
-      <h3>Contact / Connect</h3>
-      <ul>
-        <li><a href="https://github.com/GoodGuyGreeny" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-        <li><a href="mailto:mathurpa@msu.edu">Email</a></li>
-        <li><a href="https://palash-mathur.itch.io" target="_blank" rel="noopener noreferrer">itch.io</a></li>
-      </ul>
-      <p>Thanks for playing.</p>
-      <p><a class="credits-link" href="#welcome">Return to Main Menu</a></p>
+      <div class="contact-topline"><span>PM / COMMUNICATIONS</span><span>END OF TRANSMISSION</span></div>
+      <div class="contact-layout">
+        <div class="contact-intro">
+          <p class="contact-eyebrow">YOU MADE IT TO THE END.</p>
+          <h2 id="contact-heading">LET'S BUILD<br><span>SOMETHING.</span></h2>
+          <p class="contact-copy">Talk games. Trade ideas. Make something cool.<br>Or just drop in and say hi.</p>
+          <div class="contact-signature"><span class="contact-monogram" aria-hidden="true">PM</span><div><h3>Palash Mathur</h3><p>Games and Interactive Media<br>Michigan State University</p></div></div>
+        </div>
+        <div class="contact-terminal">
+          <div class="contact-terminal-bar"><span><i aria-hidden="true"></i> CONTACT DIRECTORY</span><span aria-hidden="true">[ 03 ]</span></div>
+          <p class="contact-terminal-prompt" aria-hidden="true">&gt; choose_a_channel</p>
+          <a class="contact-email" href="mailto:mathurpa@msu.edu"><span class="contact-channel-label">01 / EMAIL</span><strong>mathurpa@msu.edu</strong><span class="contact-channel-note">Start a conversation <span aria-hidden="true">&#8599;</span></span></a>
+          <ul class="contact-channels" aria-label="Find me online">
+            <li><a href="https://github.com/GoodGuyGreeny" target="_blank" rel="noopener noreferrer"><span class="contact-channel-label">02 / GITHUB</span><strong>GoodGuyGreeny</strong><span class="contact-channel-note">Explore the code <span aria-hidden="true">&#8599;</span></span></a></li>
+            <li><a href="https://palash-mathur.itch.io" target="_blank" rel="noopener noreferrer"><span class="contact-channel-label">03 / ITCH.IO</span><strong>palash-mathur</strong><span class="contact-channel-note">Explore the games <span aria-hidden="true">&#8599;</span></span></a></li>
+          </ul>
+          <p class="contact-terminal-end" aria-hidden="true">NO QUEST TOO SMALL. <span>_</span></p>
+        </div>
+      </div>
+      <div class="contact-outro"><p>Thanks for playing.<span>There's always another project.</span></p><a class="credits-link" href="#welcome"><span aria-hidden="true">&#8592;</span> Return to Main Menu</a></div>
     </section>
   </main>
 

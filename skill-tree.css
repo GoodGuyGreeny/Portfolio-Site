@@ -1,0 +1,54 @@
+/* Scoped atlas replaces the previous placeholder grid without affecting other screens. */
+#skills.skill-atlas { display:flex; flex-direction:column; align-items:stretch; gap:12px; padding:48px clamp(16px,3vw,48px) 18px; text-align:left; isolation:isolate; overflow:hidden; }
+#skills.skill-atlas::before, #skills.skill-atlas::after { content:none; display:none; }
+#skills.skill-atlas > * { grid-area:auto; min-width:0; }
+#skills .atlas-heading { display:flex; align-items:end; justify-content:space-between; gap:20px; position:static; background:none; border:0; padding:0; box-shadow:none; width:auto; }
+#skills .atlas-eyebrow { color:var(--color-muted); font:500 11px 'Chakra Petch',sans-serif; letter-spacing:.16em; margin:0 0 8px; }
+#skills #skills-heading { border:0; padding:0; margin:0; color:var(--color-text); font-size:clamp(24px,3vw,40px); line-height:1.1; }
+#skills .atlas-heading > p { margin:0; color:var(--color-muted); font-size:15px; line-height:1.4; }
+#skills .atlas-toolbar { display:flex; align-items:center; flex-wrap:wrap; gap:7px; }
+#skills .atlas-toolbar > span { margin-right:auto; color:var(--color-muted); font-size:13px; }
+#skills .atlas-toolbar button { min-height:36px; padding:5px 12px; border:1px solid var(--color-border); background:var(--color-panel); color:var(--color-text); font:500 12px 'Chakra Petch',sans-serif; cursor:pointer; }
+#skills .atlas-layout { display:grid; grid-template-columns:minmax(0,1fr); grid-template-rows:minmax(0,1fr); flex:1; min-height:0; border:1px solid var(--color-border); }
+#skills .atlas-viewport { position:relative; min-width:0; min-height:0; overflow:hidden; touch-action:none; overscroll-behavior:contain; cursor:grab; background:radial-gradient(ellipse at center, #252123 0, #100d12 65%, #09080b 100%); scrollbar-width:thin; scrollbar-color:#766345 #100d12; }
+#skills .atlas-viewport.is-dragging { cursor:grabbing; user-select:none; }
+#skills .atlas-space { position:absolute; inset:0; overflow:hidden; }
+#skills .atlas-world { position:absolute; width:2600px; height:2400px; transform-origin:0 0; background:radial-gradient(circle at center, transparent 0 175px, #c4a56b16 176px 177px, transparent 178px 460px, #c4a56b0b 461px 462px, transparent 463px); }
+#skills .atlas-edges { position:absolute; inset:0; pointer-events:none; }
+#skills .atlas-edge { fill:none; stroke-width:2; opacity:.55; }
+#skills .atlas-edge--project { stroke-dasharray:7 7; opacity:.35; }
+#skills .atlas-node { position:absolute; display:flex; flex-direction:column; align-items:center; justify-content:center; width:44px; height:44px; padding:0; border:0; background:none; color:#f1e8da; font:500 16px/1.25 'Chakra Petch',sans-serif; transform:translate(-50%,-50%) scale(var(--node-boost, 1)); cursor:pointer; z-index:1; text-align:center; }
+#skills .atlas-emblem { display:grid; place-items:center; width:44px; height:44px; box-sizing:border-box; border:2px solid #827258; border-radius:50%; background:radial-gradient(circle,#343139,#141118 75%); box-shadow:0 0 0 4px #17131a,0 0 0 5px #504432; color:var(--node-color); font-size:18px; transition:box-shadow .2s,border-color .2s; }
+#skills .atlas-label { position:absolute; top:100%; width:max-content; opacity:0; visibility:hidden; pointer-events:none; margin-top:12px; max-width:160px; padding:3px 6px; background:#100d12e8; border-radius:3px; }
+#skills .atlas-node--core { width:110px; height:110px; }
+#skills .atlas-node--branch { width:64px; height:64px; }
+#skills .atlas-node--primary.atlas-node--branch { width:80px; height:80px; }
+#skills .atlas-node--project { width:86px; height:86px; }
+#skills .atlas-node--skill { width:32px; height:32px; }
+#skills .atlas-node:is(:hover, :focus-visible) { z-index:10; }
+#skills .atlas-node:is(:hover, :focus-visible) .atlas-label { opacity:1; visibility:visible; }
+#skills .atlas-node--core .atlas-emblem { width:110px; height:110px; font-size:32px; border-style:double; border-width:5px; box-shadow:0 0 0 7px #17131a,0 0 0 8px #a58b58,0 0 60px #d3ae6420; }
+#skills .atlas-node--core .atlas-label { max-width:240px; font-size:22px; color:#e5c27a; }
+#skills .atlas-node--branch .atlas-emblem { width:64px; height:64px; font-size:28px; }
+#skills .atlas-node--primary.atlas-node--branch .atlas-emblem { width:80px; height:80px; border-width:3px; box-shadow:0 0 0 5px #17131a,0 0 0 6px var(--node-color),0 0 35px #ffffff12; }
+#skills .atlas-node--primary .atlas-label { color:var(--node-color); }
+#skills .atlas-node--project .atlas-emblem { width:86px; height:86px; border-radius:16px; border:3px double #d9b66c; font-size:42px; }
+#skills .atlas-node--project .atlas-label { color:#e5c27a; font-size:18px; }
+#skills .atlas-node.is-active .atlas-emblem { background:radial-gradient(circle,#474039,#19151c); border-color:var(--node-color); box-shadow:0 0 0 4px #17131a,0 0 0 5px var(--node-color),0 0 24px color-mix(in srgb,var(--node-color) 35%,transparent); }
+#skills .atlas-node:hover .atlas-emblem, #skills .atlas-node:focus-visible .atlas-emblem { outline:2px solid var(--node-color); outline-offset:8px; }
+#skills button:focus-visible, #skills .atlas-viewport:focus-visible { outline:2px solid var(--color-green-primary); outline-offset:3px; }
+#skills .atlas-footer { display:flex; justify-content:space-between; gap:12px; align-items:center; background:none; padding:0; border:0; }
+#skills .atlas-footer p, #skills .atlas-footer a { font-size:12px; margin:0; }
+@media(max-width:800px) {
+  #skills .atlas-heading > p { display:none; }
+  #skills .atlas-layout { grid-template-columns:1fr; grid-template-rows:minmax(0,1fr); }
+  #skills .atlas-toolbar > span { width:100%; }
+  #skills .atlas-footer { align-items:start; }
+  #skills .atlas-footer p { max-width:60%; }
+}
+@media(prefers-reduced-motion:reduce) { #skills .atlas-emblem { transition:none; } }
+
+#skills .atlas-node--skill .atlas-emblem { width:32px; height:32px; font-size:14px; }
+#skills .atlas-node--skill .atlas-label { font-size:14px; margin-top:9px; }
+
+#skills .atlas-heading, #skills .atlas-toolbar, #skills .atlas-footer { flex-shrink:0; }

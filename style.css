@@ -26,7 +26,7 @@
 /* 3. Base / Reset */
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
+  scroll-snap-type: none;
   background: var(--color-background);
 }
 
@@ -1148,7 +1148,7 @@ a heavy website toolbar.
 
 Prompt:
 Update only style.css. Make the header fixed, lightweight, and transparent; keep
-the nav links as clean green HUD-style text; use :target/:has() to highlight the
+the nav links as clean green HUD-style text; use .is-target/:has() to highlight the
 current section; account for the fixed header with scroll offsets; and preserve
 the existing responsive Flexbox behavior. Do not modify HTML or add JavaScript.
 
@@ -1201,14 +1201,14 @@ main > section {
   scroll-margin-top: 18rem;
 }
 
-body:has(#home:target) header nav a[href="#home"],
-body:has(#welcome:target) header nav a[href="#welcome"],
-body:has(#about:target) header nav a[href="#about"],
-body:has(#what-i-love:target) header nav a[href="#what-i-love"],
-body:has(#skills:target) header nav a[href="#skills"],
-body:has(#portfolio:target) header nav a[href="#portfolio"],
-body:has(#contact:target) header nav a[href="#contact"],
-body:not(:has(:target)) header nav a[href="#home"] {
+body:has(#home.is-target) header nav a[href="#home"],
+body:has(#welcome.is-target) header nav a[href="#welcome"],
+body:has(#about.is-target) header nav a[href="#about"],
+body:has(#what-i-love.is-target) header nav a[href="#what-i-love"],
+body:has(#skills.is-target) header nav a[href="#skills"],
+body:has(#portfolio.is-target) header nav a[href="#portfolio"],
+body:has(#contact.is-target) header nav a[href="#contact"],
+body:not(:has(.is-target)) header nav a[href="#home"] {
   color: var(--color-green-primary);
   font-weight: 700;
   text-shadow: 0 0 8px rgb(99 230 151 / 42%);
@@ -1416,30 +1416,30 @@ body:not(:has(:target)) header nav a[href="#home"] {
     text-shadow: 0 0 12px rgb(99 230 151 / 50%);
   }
 
-  #skills:has(#skills-programming:target) #skills-programming,
-  #skills:has(#skills-game-development:target) #skills-game-development,
-  #skills:has(#skills-tools:target) #skills-tools,
-  #skills:has(#skills-experience:target) #skills-experience,
-  #skills:has(#skills-education:target) #skills-education,
-  #skills:has(#skills-resume:target) #skills-resume {
+  #skills:has(#skills-programming.is-target) #skills-programming,
+  #skills:has(#skills-game-development.is-target) #skills-game-development,
+  #skills:has(#skills-tools.is-target) #skills-tools,
+  #skills:has(#skills-experience.is-target) #skills-experience,
+  #skills:has(#skills-education.is-target) #skills-education,
+  #skills:has(#skills-resume.is-target) #skills-resume {
     border-color: var(--color-green-primary);
     background:
       radial-gradient(ellipse at center, rgb(24 70 43 / 72%), rgb(22 9 13 / 96%));
     filter: drop-shadow(0 0 7px rgb(99 230 151 / 58%));
   }
 
-  #skills:has(#skills-programming:target) #skills-programming h3,
-  #skills:has(#skills-game-development:target) #skills-game-development h3,
-  #skills:has(#skills-tools:target) #skills-tools h3,
-  #skills:has(#skills-experience:target) #skills-experience h3,
-  #skills:has(#skills-education:target) #skills-education h3,
-  #skills:has(#skills-resume:target) #skills-resume h3,
-  #skills:has(#skills-programming:target) .stats-navigation a[href="#skills-programming"],
-  #skills:has(#skills-game-development:target) .stats-navigation a[href="#skills-game-development"],
-  #skills:has(#skills-tools:target) .stats-navigation a[href="#skills-tools"],
-  #skills:has(#skills-experience:target) .stats-navigation a[href="#skills-experience"],
-  #skills:has(#skills-education:target) .stats-navigation a[href="#skills-education"],
-  #skills:has(#skills-resume:target) .stats-navigation a[href="#skills-resume"] {
+  #skills:has(#skills-programming.is-target) #skills-programming h3,
+  #skills:has(#skills-game-development.is-target) #skills-game-development h3,
+  #skills:has(#skills-tools.is-target) #skills-tools h3,
+  #skills:has(#skills-experience.is-target) #skills-experience h3,
+  #skills:has(#skills-education.is-target) #skills-education h3,
+  #skills:has(#skills-resume.is-target) #skills-resume h3,
+  #skills:has(#skills-programming.is-target) .stats-navigation a[href="#skills-programming"],
+  #skills:has(#skills-game-development.is-target) .stats-navigation a[href="#skills-game-development"],
+  #skills:has(#skills-tools.is-target) .stats-navigation a[href="#skills-tools"],
+  #skills:has(#skills-experience.is-target) .stats-navigation a[href="#skills-experience"],
+  #skills:has(#skills-education.is-target) .stats-navigation a[href="#skills-education"],
+  #skills:has(#skills-resume.is-target) .stats-navigation a[href="#skills-resume"] {
     color: var(--color-green-primary);
     font-weight: 700;
     text-shadow: 0 0 9px rgb(99 230 151 / 42%);
@@ -1462,7 +1462,7 @@ the left and one active information panel on the right.
 Prompt:
 Update only style.css. At 768px and above, turn #what-i-love into a two-column
 Codex with a vertical category menu on the left and one selected .codex-entry on
-the right. Use CSS :target/:has() so only one entry is shown at a time, default
+the right. Use CSS .is-target/:has() so only one entry is shown at a time, default
 to Coding when nothing is targeted, preserve the red/black + green HUD styling,
 and keep the mobile layout readable. Do not modify HTML or add JavaScript.
 
@@ -1536,7 +1536,7 @@ appeared at once.
 Prompt:
 Update only style.css. Below 768px, keep the same CSS-only Codex interaction as
 desktop: show the category selector, display only the selected entry with
-:target, default to Coding, keep the navigation compact and horizontally usable,
+.is-target, default to Coding, keep the navigation compact and horizontally usable,
 and hide redundant "Back to Codex" links. Preserve the desktop Codex unchanged.
 
 The CSS below is the mobile Codex fix.
@@ -1595,11 +1595,11 @@ The CSS below is the mobile Codex fix.
   padding: 0.9rem;
 }
 
-#what-i-love .codex-entry:not(:target) {
+#what-i-love .codex-entry:not(.is-target) {
   display: none;
 }
 
-#what-i-love:not(:has(.codex-entry:target)) #love-coding {
+#what-i-love:not(:has(.codex-entry.is-target)) #love-coding {
   display: block;
 }
 
@@ -1611,12 +1611,12 @@ The CSS below is the mobile Codex fix.
   display: none;
 }
 
-#what-i-love:has(#love-coding:target) .codex-navigation a[href="#love-coding"],
-#what-i-love:has(#love-gaming:target) .codex-navigation a[href="#love-gaming"],
-#what-i-love:has(#love-anime:target) .codex-navigation a[href="#love-anime"],
-#what-i-love:has(#love-manga:target) .codex-navigation a[href="#love-manga"],
-#what-i-love:has(#love-music:target) .codex-navigation a[href="#love-music"],
-#what-i-love:not(:has(.codex-entry:target)) .codex-navigation a[href="#love-coding"] {
+#what-i-love:has(#love-coding.is-target) .codex-navigation a[href="#love-coding"],
+#what-i-love:has(#love-gaming.is-target) .codex-navigation a[href="#love-gaming"],
+#what-i-love:has(#love-anime.is-target) .codex-navigation a[href="#love-anime"],
+#what-i-love:has(#love-manga.is-target) .codex-navigation a[href="#love-manga"],
+#what-i-love:has(#love-music.is-target) .codex-navigation a[href="#love-music"],
+#what-i-love:not(:has(.codex-entry.is-target)) .codex-navigation a[href="#love-coding"] {
   border-color: rgb(227 79 93 / 72%);
   border-left: 3px solid var(--color-green-primary);
   background: linear-gradient(100deg, rgb(70 19 29 / 74%), rgb(22 9 13 / 92%));
@@ -1733,11 +1733,11 @@ The CSS below is the spacing refinement.
     box-shadow: inset 3px 0 var(--color-red-dark);
   }
 
-  #what-i-love .codex-entry:not(:target) {
+  #what-i-love .codex-entry:not(.is-target) {
     display: none;
   }
 
-  #what-i-love:not(:has(.codex-entry:target)) #love-coding {
+  #what-i-love:not(:has(.codex-entry.is-target)) #love-coding {
     display: block;
   }
 
@@ -1765,12 +1765,12 @@ The CSS below is the spacing refinement.
     margin: 0;
   }
 
-  #what-i-love:has(#love-coding:target) .codex-navigation a[href="#love-coding"],
-  #what-i-love:has(#love-gaming:target) .codex-navigation a[href="#love-gaming"],
-  #what-i-love:has(#love-anime:target) .codex-navigation a[href="#love-anime"],
-  #what-i-love:has(#love-manga:target) .codex-navigation a[href="#love-manga"],
-  #what-i-love:has(#love-music:target) .codex-navigation a[href="#love-music"],
-  #what-i-love:not(:has(.codex-entry:target)) .codex-navigation a[href="#love-coding"] {
+  #what-i-love:has(#love-coding.is-target) .codex-navigation a[href="#love-coding"],
+  #what-i-love:has(#love-gaming.is-target) .codex-navigation a[href="#love-gaming"],
+  #what-i-love:has(#love-anime.is-target) .codex-navigation a[href="#love-anime"],
+  #what-i-love:has(#love-manga.is-target) .codex-navigation a[href="#love-manga"],
+  #what-i-love:has(#love-music.is-target) .codex-navigation a[href="#love-music"],
+  #what-i-love:not(:has(.codex-entry.is-target)) .codex-navigation a[href="#love-coding"] {
     border-color: rgb(227 79 93 / 72%);
     border-left: 3px solid var(--color-green-primary);
     background: linear-gradient(100deg, rgb(70 19 29 / 74%), rgb(22 9 13 / 92%));
@@ -1983,13 +1983,13 @@ The CSS below is the spacing refinement.
 }
 
 #skills .stat-category:hover,
-#skills .stat-category:target,
-#skills:has(#skills-programming:target) #skills-programming,
-#skills:has(#skills-game-development:target) #skills-game-development,
-#skills:has(#skills-tools:target) #skills-tools,
-#skills:has(#skills-experience:target) #skills-experience,
-#skills:has(#skills-education:target) #skills-education,
-#skills:has(#skills-resume:target) #skills-resume {
+#skills .stat-category.is-target,
+#skills:has(#skills-programming.is-target) #skills-programming,
+#skills:has(#skills-game-development.is-target) #skills-game-development,
+#skills:has(#skills-tools.is-target) #skills-tools,
+#skills:has(#skills-experience.is-target) #skills-experience,
+#skills:has(#skills-education.is-target) #skills-education,
+#skills:has(#skills-resume.is-target) #skills-resume {
   border: 0;
   background: transparent;
   box-shadow: none;
@@ -2002,7 +2002,7 @@ The CSS below is the spacing refinement.
 #skills:has(.stats-navigation a[href="#skills-experience"]:hover) #skills-experience::before,
 #skills:has(.stats-navigation a[href="#skills-education"]:hover) #skills-education::before,
 #skills:has(.stats-navigation a[href="#skills-resume"]:hover) #skills-resume::before,
-#skills .stat-category:target::before {
+#skills .stat-category.is-target::before {
   background: linear-gradient(145deg, rgb(99 230 151 / 95%), var(--color-green-dark));
   filter: drop-shadow(0 0 7px rgb(99 230 151 / 72%));
 }
@@ -2060,7 +2060,7 @@ The CSS below is the spacing refinement.
   transform: translate(-50%, 0);
 }
 
-#skills .stat-category:target {
+#skills .stat-category.is-target {
   z-index: 1000;
   width: 72px;
   height: 72px;
@@ -2070,12 +2070,12 @@ The CSS below is the spacing refinement.
   transform: none;
 }
 
-#skills:has(#skills-programming:target) #skills-programming,
-#skills:has(#skills-game-development:target) #skills-game-development,
-#skills:has(#skills-tools:target) #skills-tools,
-#skills:has(#skills-experience:target) #skills-experience,
-#skills:has(#skills-education:target) #skills-education,
-#skills:has(#skills-resume:target) #skills-resume {
+#skills:has(#skills-programming.is-target) #skills-programming,
+#skills:has(#skills-game-development.is-target) #skills-game-development,
+#skills:has(#skills-tools.is-target) #skills-tools,
+#skills:has(#skills-experience.is-target) #skills-experience,
+#skills:has(#skills-education.is-target) #skills-education,
+#skills:has(#skills-resume.is-target) #skills-resume {
   border: 0;
   background: transparent;
   box-shadow: none;
@@ -2083,7 +2083,7 @@ The CSS below is the spacing refinement.
   transform: none;
 }
 
-#skills .stat-category:target::after {
+#skills .stat-category.is-target::after {
   position: fixed;
   z-index: -1;
   top: 50%;
@@ -2103,7 +2103,7 @@ The CSS below is the spacing refinement.
   transform: translate(-50%, -50%);
 }
 
-#skills .stat-category:target h3 {
+#skills .stat-category.is-target h3 {
   position: fixed;
   z-index: 1002;
   top: calc(50% - clamp(10rem, 34vh, 20rem) + 1.25rem);
@@ -2127,11 +2127,11 @@ The CSS below is the spacing refinement.
   transform: translateX(-50%);
 }
 
-#skills .stat-category:target h3::before {
+#skills .stat-category.is-target h3::before {
   display: none;
 }
 
-#skills .stat-category:target h3::after {
+#skills .stat-category.is-target h3::after {
   display: block;
   width: 100%;
   height: clamp(8rem, 24vh, 14rem);
@@ -2145,7 +2145,7 @@ The CSS below is the spacing refinement.
   box-shadow: inset 0 0 22px rgb(0 0 0 / 58%);
 }
 
-#skills .stat-category:target > p:has(> a[href="#skills"]) {
+#skills .stat-category.is-target > p:has(> a[href="#skills"]) {
   position: fixed;
   z-index: 1003;
   top: calc(50% + clamp(8rem, 28vh, 17rem));
@@ -2155,7 +2155,7 @@ The CSS below is the spacing refinement.
   transform: translateX(-50%);
 }
 
-#skills .stat-category:target > p > a[href="#skills"] {
+#skills .stat-category.is-target > p > a[href="#skills"] {
   padding: 0.4rem 0.85rem;
   border-color: var(--color-border);
   background: var(--color-background-secondary);
@@ -2243,7 +2243,7 @@ Prompt:
 Update only style.css. Make #skills mobile-first: use a compact responsive node
 arrangement on small screens, keep the hexagons tappable, hide complex desktop
 connector lines where necessary, keep the CORE visible, preserve CSS-only
-:target behavior, and leave the existing 1024px+ desktop Skill Tree unchanged.
+.is-target behavior, and leave the existing 1024px+ desktop Skill Tree unchanged.
 Use the existing 480px, 768px, and 1024px breakpoints. Do not modify HTML,
 JavaScript, or other sections.
 
@@ -2969,4 +2969,1133 @@ main > section {
     justify-content: space-evenly;
     gap: 1.25rem;
   }
+}
+
+/* 10.6 Lab: theme controls and the inverse HUD palette.
+   Keep these after the earlier design rules so both themes cover legacy colors. */
+:root {
+  color-scheme: dark;
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
+  --color-background: #f7f3ef;
+  --color-background-secondary: #ece4de;
+  --color-panel: #fffaf5;
+  --color-panel-raised: #e9ded7;
+  --color-text: #211c20;
+  --color-muted: #51464c;
+  --color-green-primary: #176438;
+  --color-green-soft: #245b38;
+  --color-green-dark: #d7eadb;
+  --color-red-primary: #a42b3c;
+  --color-red-dark: #d9a9ad;
+  --color-accent-hover: #114526;
+  --color-border: #ad8d91;
+  --shadow-green: 0 0 18px rgb(23 100 56 / 12%);
+  --shadow-red: 0 0 18px rgb(164 43 60 / 10%);
+  --shadow-panel: 0 10px 24px rgb(52 32 38 / 12%);
+}
+
+body > header {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.5rem, 2vw, 1.5rem);
+  min-height: 50px;
+  background: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+}
+
+body > header > nav {
+  flex: 1;
+  min-width: 0;
+}
+
+.theme-toggle {
+  flex: 0 0 auto;
+  min-height: 36px;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--color-green-primary);
+  border-radius: var(--border-radius);
+  background: var(--color-background-secondary);
+  color: var(--color-green-soft);
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.theme-toggle[hidden] {
+  display: none;
+}
+
+.theme-toggle:hover {
+  background: var(--color-green-dark);
+  color: var(--color-text);
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid var(--color-green-primary);
+  outline-offset: 3px;
+}
+
+#home > .terminal-prompt {
+  min-height: 3.2em;
+  max-width: 100%;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+html[data-theme="light"] body {
+  background:
+    radial-gradient(ellipse at 12% 8%, rgb(164 43 60 / 8%), transparent 36%),
+    var(--color-background);
+}
+
+html[data-theme="light"] #home {
+  background: radial-gradient(ellipse at 50% 30%, rgb(164 43 60 / 9%), transparent 65%);
+}
+
+html[data-theme="light"] :is(h1, h2, h3, h4, a, #home > p) {
+  text-shadow: none;
+}
+
+html[data-theme="light"] :is(
+  .photo-collage, #about dl, blockquote,
+  .main-menu .menu-option, #what-i-love .codex-entry,
+  #portfolio .mission-card, #contact, footer
+) {
+  background: var(--color-panel);
+  color: var(--color-text);
+}
+
+html[data-theme="light"] #skills .stat-category h3::before {
+  background: var(--color-panel);
+}
+
+html[data-theme="light"] #skills .stat-category::after {
+  background: var(--color-panel);
+  color: var(--color-green-primary);
+  text-shadow: none;
+}
+
+html[data-theme="light"] #skills .stat-category.is-target::after {
+  background: var(--color-panel);
+  box-shadow: 0 0 0 100vmax rgb(33 28 32 / 45%), var(--shadow-panel);
+}
+
+html[data-theme="light"] #skills .stat-category.is-target h3::after {
+  background: var(--color-background-secondary);
+}
+
+html[data-theme="light"] :is(
+  .main-menu .menu-option, .codex-navigation a, .stats-navigation a
+):hover {
+  background: var(--color-green-dark);
+}
+
+html[data-theme="light"] a:visited {
+  color: #455d37;
+}
+
+html[data-theme="light"] .play-button,
+html[data-theme="light"] .play-button:visited,
+html[data-theme="light"] .play-button:hover,
+html[data-theme="light"] #portfolio .mission-card a:hover,
+html[data-theme="light"] #contact li a:hover,
+html[data-theme="light"] .credits-link:hover {
+  color: #fffaf5;
+}
+
+html[data-theme="light"] ::selection {
+  background: #176438;
+  color: #fffaf5;
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+  body > header nav ul {
+    justify-content: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+  }
+
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Cover the Codex's selected states and solid project buttons in light mode. */
+html[data-theme="light"] #what-i-love .codex-navigation a {
+  background: var(--color-background-secondary) !important;
+  color: var(--color-green-primary);
+  text-shadow: none;
+}
+
+html[data-theme="light"] #what-i-love .codex-navigation a:hover {
+  background: var(--color-green-dark) !important;
+}
+
+html[data-theme="light"] #portfolio .mission-card a,
+html[data-theme="light"] #portfolio .mission-card a:visited {
+  color: #fffaf5;
+}
+
+/* Game-screen shutters: fixed layers never alter section layout. */
+.screen-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  pointer-events: auto;
+  overflow: hidden;
+}
+.screen-transition[hidden] { display: none; }
+.screen-transition__top,
+.screen-transition__bottom {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: calc(50% + 1px);
+  box-sizing: border-box;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 5px, rgb(127 127 127 / 5%) 5px 6px),
+    var(--color-background);
+  will-change: transform;
+}
+.screen-transition__top {
+  top: 0;
+  border-bottom: 2px solid var(--color-green-primary);
+}
+.screen-transition__bottom {
+  bottom: 0;
+  border-top: 1px solid var(--color-red-primary);
+}
+
+/* CRT startup stays black in either theme; the real palette appears on reveal. */
+html.booting,
+html.booting body {
+  background: #000;
+  overflow: hidden;
+}
+html.booting body > :is(header, main, footer) { opacity: 0; }
+.boot-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 20000;
+  display: grid;
+  place-items: center;
+  background: #000;
+  color: #f4eeef;
+  font-family: 'Chakra Petch', monospace;
+}
+.boot-screen__scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(0deg, transparent 0 3px, rgb(0 0 0 / 22%) 3px 4px);
+  z-index: 1;
+}
+.boot-screen__content {
+  width: min(90vw, 850px);
+  text-align: center;
+}
+.boot-screen__tag {
+  color: #70917b;
+  font: 500 0.7rem 'Chakra Petch', monospace;
+  letter-spacing: 0.24em;
+  margin: 0 auto 1.5rem;
+}
+.boot-screen .boot-screen__title {
+  min-height: 2.4em;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  color: #63e697;
+  font: 600 clamp(1.6rem, 4.8vw, 3.5rem)/1.2 'Chakra Petch', monospace;
+  text-shadow: 0 0 8px rgb(99 230 151 / 45%), 0 0 30px rgb(99 230 151 / 20%);
+}
+.boot-screen .typed-cursor { color: #63e697; }
+.boot-screen__status {
+  min-height: 1.6em;
+  margin: 1.25rem auto;
+  color: #f4eeef;
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  letter-spacing: 0.06em;
+  opacity: 0;
+}
+.boot-screen__track {
+  width: min(220px, 60vw);
+  height: 1px;
+  margin: 2rem auto 0;
+  background: #172b1e;
+  overflow: hidden;
+}
+.boot-screen__track span {
+  display: block;
+  height: 100%;
+  background: #63e697;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.boot-screen__skip {
+  position: absolute;
+  bottom: max(1.5rem, env(safe-area-inset-bottom));
+  right: max(1.5rem, env(safe-area-inset-right));
+  min-height: 44px;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid #34523e;
+  background: #000;
+  color: #b9c8bd;
+  font: 500 0.75rem 'Chakra Petch', monospace;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  z-index: 2;
+}
+.boot-screen__skip:hover { border-color: #63e697; color: #63e697; }
+.boot-screen__skip:focus-visible { outline: 2px solid #63e697; outline-offset: 4px; }
+
+/* A segmented section rail replaces the native scrollbar. */
+html { scrollbar-width: none; }
+html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+.section-rail {
+  position: fixed;
+  z-index: 1100;
+  right: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.section-rail__segment {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: clamp(28px, 6vh, 52px);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.section-rail__segment::before {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 100%;
+  background: #666;
+  border-radius: 1px;
+}
+.section-rail__segment[aria-current]::before {
+  background: #e34f5d;
+  box-shadow: 0 0 8px rgb(227 79 93 / 35%);
+}
+.section-rail__segment:hover::before { width: 7px; }
+.section-rail__segment:focus-visible { outline: 2px solid var(--color-green-primary); outline-offset: -2px; }
+html.booting .section-rail,
+body:has(.stat-category.is-target) .section-rail { visibility: hidden; }
+@media (max-width: 767px) {
+  main > section { padding-right: max(2rem, 5vw); }
+}
+
+/* Cyberpunk character dossier. Scoped to replace the original collage layout. */
+#about.character-profile {
+  display: block;
+  padding-top: 4.5rem;
+  padding-bottom: 2rem;
+}
+#about .dossier-topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.6rem;
+  font: 600 0.7rem 'Chakra Petch', sans-serif;
+  letter-spacing: 0.15em;
+  color: var(--color-muted);
+}
+#about .dossier-status { color: var(--color-green-primary); }
+#about > h2 {
+  margin: 0.8rem 0 1.3rem;
+  border: 0;
+  padding: 0;
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  text-transform: uppercase;
+}
+#about .dossier-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(1.5rem, 5vw, 5rem);
+  max-width: 1150px;
+  margin: auto;
+  align-items: center;
+}
+#about .dossier-visual { min-width: 0; }
+#about .dossier-portrait {
+  position: relative;
+  height: clamp(240px, 43vh, 460px);
+  overflow: hidden;
+  border: 1px solid var(--color-red-primary);
+  border-top: 3px solid var(--color-red-primary);
+  background: var(--color-panel);
+  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+}
+#about #profile-portrait {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  filter: saturate(0.8);
+}
+#about #profile-portrait:hover { opacity: 1; }
+#about .portrait-id {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0.35rem 0.8rem;
+  background: #090507;
+  color: #63e697;
+  font: 500 0.65rem 'Chakra Petch', sans-serif;
+  letter-spacing: 0.1em;
+}
+#about .dossier-scan {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 16%;
+  pointer-events: none;
+  transform: translateY(-100%);
+  background: linear-gradient(transparent, rgb(99 230 151 / 12%));
+  border-bottom: 1px solid rgb(99 230 151 / 45%);
+}
+#about .portrait-selector { display: flex; gap: 0.6rem; margin-top: 0.7rem; }
+#about .portrait-selector button {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  height: 65px;
+  padding: 3px;
+  border: 1px solid var(--color-border);
+  background: var(--color-background-secondary);
+  cursor: pointer;
+}
+#about .portrait-selector img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
+#about .portrait-selector span {
+  position: absolute; right: 3px; bottom: 2px;
+  background: #090507; color: #f4eeef;
+  padding: 0 0.3rem; font: 500 0.65rem 'Chakra Petch', sans-serif;
+}
+#about .portrait-selector button[aria-pressed="true"],
+#about .portrait-selector button:hover { border-color: var(--color-green-primary); box-shadow: var(--shadow-green); }
+#about .portrait-selector button[aria-pressed="true"] img { opacity: 1; }
+#about .portrait-selector button:focus-visible { outline: 2px solid var(--color-green-primary); outline-offset: 3px; }
+#about .dossier-eyebrow {
+  margin: 0 0 0.7rem;
+  color: var(--color-green-primary);
+  font: 600 0.75rem 'Chakra Petch', sans-serif;
+  letter-spacing: 0.12em;
+}
+#about .dossier-eyebrow span { color: var(--color-muted); }
+#about .dossier-name {
+  margin: 0 0 1.2rem;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+}
+#about .dossier-name span { color: var(--color-green-primary); }
+#about .dossier-facts { margin: 0; padding: 0; border: 0; background: transparent; box-shadow: none; }
+#about .dossier-facts > div { display: grid; grid-template-columns: 90px 1fr; gap: 1rem; border-bottom: 1px solid var(--color-border); padding: 0.4rem 0; }
+#about .dossier-facts dt { margin: 0; font-size: 0.7rem; color: var(--color-muted); align-self: center; }
+#about .dossier-facts dd { margin: 0; padding: 0; border: 0; color: var(--color-text); font-size: 1rem; }
+#about .dossier-interests { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
+#about .dossier-interests span { padding: 0.2rem 0.6rem; border: 1px solid var(--color-border); color: var(--color-green-soft); font: 500 0.65rem 'Chakra Petch', sans-serif; letter-spacing: 0.12em; }
+#about .dossier-quote { margin: 0; background: var(--color-panel); font-size: 0.95rem; }
+#about .dossier-signoff { margin: 0.8rem 0 0; font: 500 0.6rem 'Chakra Petch', sans-serif; color: var(--color-muted); letter-spacing: 0.16em; }
+#about .dossier-signoff span { float: right; color: var(--color-red-primary); }
+#about > .dossier-return { margin: 1.5rem auto 0; text-align: center; }
+@media (max-width: 767px) {
+  #about .dossier-grid { grid-template-columns: 1fr; gap: 1.3rem; }
+  #about .dossier-portrait { height: 230px; }
+  #about .portrait-selector button { height: 48px; }
+  #about .dossier-name { font-size: 2.6rem; }
+  #about .dossier-topline { font-size: 0.6rem; letter-spacing: 0.06em; }
+}
+
+/* The stage stays steady while the inner frame follows the photo's proportions. */
+#about .portrait-stage {
+  --portrait-height: clamp(240px, 43vh, 460px);
+  height: calc(var(--portrait-height) + 36px);
+  display: grid;
+  place-items: center;
+  min-width: 0;
+}
+#about .dossier-portrait {
+  width: fit-content;
+  max-width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  padding: 8px 8px 0;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+}
+#about #profile-portrait {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: var(--portrait-height);
+  margin: auto;
+  object-fit: contain;
+}
+#about .portrait-id {
+  position: static;
+  display: block;
+  padding: 5px 2px;
+  background: transparent;
+  color: var(--color-green-primary);
+  text-align: right;
+  font-size: 0.6rem;
+}
+#about .portrait-selector img { object-fit: contain; }
+@media (max-width: 767px) {
+  #about .portrait-stage { --portrait-height: 230px; }
+}
+
+/* Cyberpunk title screen: typography first, restrained HUD and perspective floor. */
+#home {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 100svh;
+  padding: 7rem 2.5rem 7rem;
+  background:
+    radial-gradient(ellipse at 50% 38%, rgb(227 79 93 / 12%), transparent 62%),
+    var(--color-background);
+}
+#home .home-title-card {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 850px);
+  text-align: center;
+  padding: 1rem 0;
+}
+#home .home-title-card::before,
+#home .home-title-card::after {
+  content: "";
+  position: absolute;
+  top: 18%;
+  width: 18px;
+  height: 90px;
+  border-top: 1px solid var(--color-red-primary);
+  border-bottom: 1px solid var(--color-red-primary);
+  opacity: 0.65;
+  pointer-events: none;
+}
+#home .home-title-card::before { left: 0; border-left: 2px solid var(--color-red-primary); }
+#home .home-title-card::after { right: 0; border-right: 2px solid var(--color-red-primary); }
+#home .home-kicker {
+  margin: 0 auto 1.2rem;
+  color: var(--color-muted);
+  font: 500 0.75rem 'Chakra Petch', sans-serif;
+  letter-spacing: 0.4em;
+}
+#home #home-heading {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-shadow: none;
+  line-height: 0.88;
+}
+#home .home-firstname,
+#home .home-lastname { display: block; font-size: clamp(3.7rem, 9.5vw, 8.5rem); letter-spacing: -0.055em; }
+#home .home-firstname { color: var(--color-text); }
+#home .home-lastname {
+  color: var(--color-green-primary);
+  text-shadow: 0 0 35px rgb(99 230 151 / 12%);
+  margin-top: 0.12em;
+}
+#home .home-edition {
+  display: inline-block;
+  margin-top: 1.8rem;
+  padding: 0.4rem 1rem;
+  border-top: 1px solid var(--color-red-primary);
+  border-bottom: 1px solid var(--color-red-primary);
+  color: var(--color-red-primary);
+  font-size: 0.75rem;
+  letter-spacing: 0.38em;
+  line-height: 1.4;
+}
+#home .home-description { margin: 1.2rem auto 1.5rem; font-size: 1.1rem; }
+#home .home-launch { display: grid; justify-items: center; gap: 0.65rem; }
+#home .terminal-prompt { min-height: 1.6em; margin: 0; font: 500 0.85rem 'Chakra Petch', sans-serif; color: var(--color-muted); }
+#home .play-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  width: min(270px, 100%);
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 0.9rem 1.3rem;
+  font-size: 1.25rem;
+  letter-spacing: 0.14em;
+  box-shadow: 0 0 30px rgb(99 230 151 / 13%);
+}
+#home .play-icon { font-size: 0.8rem; }
+#home .play-arrow { font-size: 1.3rem; transition: transform 160ms ease; }
+#home .play-button:hover .play-arrow { transform: translate(2px, -2px); }
+#home .home-hud {
+  position: absolute;
+  left: clamp(1.5rem, 5vw, 5rem);
+  right: clamp(2rem, 5vw, 5rem);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  text-align: left;
+  color: var(--color-muted);
+  font: 500 0.65rem/1.8 'Chakra Petch', sans-serif;
+  letter-spacing: 0.13em;
+  z-index: 2;
+}
+#home .home-hud--top { top: 5.5rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--color-border); }
+#home .home-hud--top > span:last-child { color: var(--color-green-primary); }
+#home .home-hud i { display: inline-block; width: 5px; height: 5px; background: currentColor; margin-right: 0.5rem; }
+#home .home-hud--bottom { bottom: 2rem; align-items: end; }
+#home .home-hud strong { color: var(--color-text); font-weight: 500; }
+#home .home-navigation-hint { text-align: right; }
+#home .home-grid {
+  position: absolute;
+  z-index: -1;
+  left: -50%;
+  bottom: -20%;
+  width: 200%;
+  height: 60%;
+  pointer-events: none;
+  background-image: linear-gradient(var(--color-border) 1px, transparent 1px), linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+  background-size: 70px 50px;
+  transform: perspective(350px) rotateX(55deg);
+  opacity: 0.22;
+  mask-image: linear-gradient(transparent, #000 60%, transparent);
+}
+html[data-theme="light"] #home { background: radial-gradient(ellipse at 50% 38%, rgb(164 43 60 / 8%), transparent 62%), var(--color-background); }
+@media (max-width: 600px) {
+  #home { padding: 7rem 2rem 8rem; }
+  #home .home-hud { font-size: 0.55rem; letter-spacing: 0.04em; }
+  #home .home-kicker { font-size: 0.65rem; letter-spacing: 0.25em; }
+  #home .home-title-card::before, #home .home-title-card::after { display: none; }
+  #home .home-description { font-size: 0.95rem; }
+  #home .home-hud--bottom { flex-direction: column; align-items: start; gap: 0.7rem; }
+  #home .home-navigation-hint { text-align: left; }
+}
+@media (min-width: 768px) and (max-height: 760px) {
+  #home .home-firstname, #home .home-lastname { font-size: clamp(3.7rem, 11vh, 6rem); }
+  #home .home-edition { margin-top: 1rem; }
+  #home .home-description { margin: 0.8rem auto; }
+}
+
+/* Welcome / cyberpunk navigation terminal */
+#welcome {
+  display: block;
+  text-align: left;
+  padding: 4.8rem clamp(2rem, 5vw, 5rem) 2.5rem;
+}
+#welcome .welcome-topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.6rem;
+  color: var(--color-muted);
+  font: 500 0.65rem 'Chakra Petch', sans-serif;
+  letter-spacing: 0.15em;
+}
+#welcome .welcome-topline span:last-child { color: var(--color-green-primary); }
+#welcome .welcome-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  max-width: 1250px;
+  margin: clamp(2rem, 5vh, 4rem) auto 0;
+  align-items: center;
+}
+#welcome .welcome-eyebrow {
+  font: 600 0.7rem 'Chakra Petch', sans-serif;
+  letter-spacing: 0.16em;
+  color: var(--color-green-primary);
+  margin: 0 0 1.2rem;
+}
+#welcome .welcome-eyebrow span { color: var(--color-muted); }
+#welcome #welcome-heading {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  color: var(--color-text);
+  font-size: clamp(2.1rem, 4.5vw, 4.6rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+#welcome #welcome-heading span { color: var(--color-green-primary); }
+#welcome .welcome-copy { font-size: 1.1rem; margin: 1.5rem 0; line-height: 1.8; }
+#welcome .welcome-emblem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  border-left: 2px solid var(--color-red-primary);
+  padding-left: 1rem;
+}
+#welcome .welcome-emblem > span {
+  font: 700 2rem 'Chakra Petch', sans-serif;
+  color: var(--color-red-primary);
+}
+#welcome .welcome-emblem small { color: var(--color-muted); font: 500 0.6rem 'Chakra Petch', sans-serif; letter-spacing: 0.13em; }
+#welcome .welcome-return { margin: 1rem 0 0; }
+#welcome .welcome-return a {
+  color: var(--color-muted);
+  background: transparent;
+  border: 0;
+  padding: 0.5rem 0;
+  box-shadow: none;
+  font: 500 0.8rem 'Chakra Petch', sans-serif;
+}
+#welcome .welcome-return a:hover { color: var(--color-green-primary); }
+#welcome .menu-directory {
+  display: flex; justify-content: space-between;
+  margin: 0 0 0.7rem;
+  color: var(--color-muted);
+  font: 500 0.6rem 'Chakra Petch', sans-serif;
+  letter-spacing: 0.15em;
+}
+#welcome .main-menu ul { max-width: none; margin: 0; padding: 0; }
+#welcome .main-menu li { display: block; margin: 0 0 0.6rem; }
+#welcome .main-menu .menu-option {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr) 1.2rem;
+  align-items: center;
+  gap: 1rem;
+  max-width: none;
+  margin: 0;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-red-primary);
+  border-radius: 0;
+  background: var(--color-panel);
+  clip-path: none;
+  box-shadow: none;
+  text-transform: none;
+  text-decoration: none;
+  transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+#welcome .menu-number { color: var(--color-red-primary); font-size: 0.8rem; letter-spacing: 0.12em; }
+#welcome .menu-text { display: grid; gap: 0.3rem; }
+#welcome .menu-text strong { color: var(--color-text); font-size: clamp(1rem, 1.6vw, 1.3rem); font-weight: 600; }
+#welcome .menu-text > span { color: var(--color-muted); font: 400 0.95rem/1.3 'Rajdhani', sans-serif; }
+#welcome .menu-chevron { color: var(--color-muted); font-size: 1.2rem; }
+#welcome .main-menu .menu-option:is(:hover, :focus-visible) {
+  transform: translateX(5px);
+  background: var(--color-background-secondary);
+  border-color: var(--color-green-primary);
+  box-shadow: inset 3px 0 var(--color-green-primary);
+}
+#welcome .menu-option:is(:hover, :focus-visible) :is(.menu-number, .menu-chevron, strong) { color: var(--color-green-primary); }
+#welcome .menu-footer { margin: 1rem 0 0; color: var(--color-muted); font: 500 0.6rem 'Chakra Petch', sans-serif; letter-spacing: 0.13em; text-align: right; }
+@media (max-width: 767px) {
+  #welcome .welcome-layout { grid-template-columns: 1fr; gap: 1.5rem; margin-top: 1.5rem; }
+  #welcome .welcome-emblem { display: none; }
+  #welcome .welcome-copy { margin: 1rem 0; font-size: 1rem; }
+  #welcome .welcome-topline { font-size: 0.55rem; letter-spacing: 0.04em; }
+  #welcome .main-menu .menu-option { padding: 0.8rem; gap: 0.6rem; grid-template-columns: 1.5rem minmax(0, 1fr) 1rem; }
+  #welcome .menu-text > span { font-size: 0.85rem; }
+}
+
+/* Codex: a quiet game archive, with an index and an illuminated record. */
+#what-i-love {
+  display: grid;
+  grid-template-columns: minmax(190px, 0.65fr) minmax(0, 1.7fr);
+  grid-template-rows: auto 1fr auto;
+  gap: 1.5rem 3rem;
+  padding: 4.8rem clamp(2rem, 6vw, 7rem) 2rem;
+  align-content: start;
+  align-items: stretch;
+}
+#what-i-love > h2 {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1.1rem;
+  margin: 0;
+  color: var(--color-text);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  letter-spacing: -0.03em;
+  text-shadow: none;
+}
+#what-i-love .archive-eyebrow {
+  display: block;
+  margin-bottom: 0.6rem;
+  color: var(--color-muted);
+  font: 500 0.65rem 'Chakra Petch', sans-serif;
+  letter-spacing: 0.18em;
+}
+#what-i-love > nav.codex-navigation {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: start;
+  margin: 0;
+}
+#what-i-love .codex-navigation::before {
+  content: "INDEX / 05 RECORDS";
+  display: block;
+  margin: 0 0 1rem;
+  color: var(--color-muted);
+  font: 500 0.65rem 'Chakra Petch', sans-serif;
+  letter-spacing: 0.13em;
+}
+#what-i-love .codex-navigation ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 0;
+  overflow: visible;
+}
+#what-i-love .codex-navigation li { width: 100%; margin: 0; }
+#what-i-love .codex-navigation a {
+  display: grid;
+  grid-template-columns: 1.5rem 1fr 1rem;
+  gap: 0.6rem;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.9rem 0.6rem;
+  border: 0 !important;
+  border-bottom: 1px solid var(--color-border) !important;
+  background: transparent !important;
+  color: var(--color-muted) !important;
+  font-size: 0.95rem;
+  font-weight: 500 !important;
+  text-transform: none;
+  text-shadow: none !important;
+  box-shadow: none;
+  clip-path: none;
+  text-align: left;
+}
+#what-i-love .codex-navigation a:is([aria-current], :hover, :focus-visible) {
+  color: var(--color-green-primary) !important;
+  background: var(--color-background-secondary) !important;
+  border-bottom-color: var(--color-green-primary) !important;
+  transform: none;
+}
+#what-i-love .archive-index { font-size: 0.65rem; color: var(--color-red-primary); }
+#what-i-love .archive-pointer { opacity: 0; }
+#what-i-love .codex-navigation a:is([aria-current], :hover, :focus-visible) .archive-pointer { opacity: 1; }
+#what-i-love .codex-entry {
+  position: relative;
+  grid-column: 2;
+  grid-row: 2;
+  align-self: stretch;
+  min-height: 390px;
+  height: auto;
+  margin: 0;
+  padding: 1.4rem clamp(1.2rem, 4vw, 4rem) 3rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0;
+  background: var(--color-panel) !important;
+  box-shadow: inset 0 0 0 6px var(--color-background), inset 0 0 0 7px var(--color-border);
+  text-align: center;
+}
+#what-i-love .codex-entry::after {
+  content: "—  END OF ENTRY  —";
+  display: block;
+  margin-top: 2rem;
+  color: var(--color-muted);
+  font: 500 0.6rem 'Chakra Petch', sans-serif;
+  letter-spacing: 0.16em;
+}
+#what-i-love .archive-entry-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--color-muted);
+  font: 500 0.6rem 'Chakra Petch', sans-serif;
+  letter-spacing: 0.1em;
+}
+#what-i-love .archive-sigil {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  margin: 2rem auto 1.2rem;
+  color: var(--color-green-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  font: 400 2rem 'Chakra Petch', sans-serif;
+  box-shadow: 0 0 0 6px var(--color-panel), 0 0 0 7px var(--color-border);
+}
+#what-i-love .codex-entry .archive-category {
+  color: var(--color-red-primary);
+  font: 500 0.6rem 'Chakra Petch', sans-serif;
+  letter-spacing: 0.2em;
+  margin: 0 auto 0.6rem;
+}
+#what-i-love .codex-entry h3 {
+  margin: 0 0 1.2rem;
+  color: var(--color-text);
+  text-shadow: none;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
+#what-i-love .codex-entry > p:not(.archive-category) {
+  max-width: 45ch;
+  margin: 0 auto;
+  color: var(--color-muted);
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+#what-i-love > p {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  justify-self: start;
+  align-self: start;
+  margin: 0;
+}
+@media (max-width: 767px) {
+  #what-i-love { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto auto auto; gap: 1.2rem; }
+  #what-i-love > nav.codex-navigation { grid-column: 1; grid-row: 2; }
+  #what-i-love .codex-navigation ul { flex-direction: row; overflow-x: auto; gap: 0.6rem; padding-bottom: 0.4rem; }
+  #what-i-love .codex-navigation li { width: auto; flex: 0 0 auto; }
+  #what-i-love .codex-navigation a { grid-template-columns: 1rem 1fr; padding: 0.6rem; white-space: nowrap; font-size: 0.8rem; }
+  #what-i-love .archive-pointer { display: none; }
+  #what-i-love .codex-entry { grid-column: 1; grid-row: 3; min-height: 350px; }
+  #what-i-love > p { grid-row: 4; }
+  #what-i-love .archive-entry-meta { font-size: 0.5rem; }
+}
+
+/* Mission Archive: project records with schematic covers, not game screenshots. */
+#portfolio { display: block; padding: 4.8rem clamp(2rem, 5vw, 5rem) 2rem; }
+#portfolio .mission-topline {
+  display: flex; justify-content: space-between; gap: 1rem;
+  padding-bottom: 0.6rem; border-bottom: 1px solid var(--color-border);
+  font: 500 0.65rem 'Chakra Petch', sans-serif; letter-spacing: 0.14em;
+  color: var(--color-muted);
+}
+#portfolio .mission-topline span:last-child { color: var(--color-green-primary); }
+#portfolio .mission-heading { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin: 1.5rem 0; }
+#portfolio #portfolio-heading { margin: 0; padding: 0; border: 0; color: var(--color-text); font-size: clamp(2rem, 4vw, 3.5rem); letter-spacing: -0.03em; }
+#portfolio .mission-heading p { margin: 0; font-size: 0.9rem; text-align: right; line-height: 1.5; }
+#portfolio .mission-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; max-width: 1350px; margin: auto; }
+#portfolio .mission-card {
+  display: flex; flex-direction: column; min-width: 0;
+  margin: 0; padding: 0; border: 1px solid var(--color-border);
+  border-top: 2px solid var(--color-red-primary); border-radius: 0;
+  background: var(--color-panel); box-shadow: none; clip-path: none;
+}
+#portfolio .mission-record {
+  display: flex; justify-content: space-between; gap: 1rem; padding: 0.8rem 1.2rem;
+  color: var(--color-muted); font: 500 0.6rem 'Chakra Petch', sans-serif; letter-spacing: 0.13em;
+}
+#portfolio .mission-record span:first-child { color: var(--color-red-primary); }
+#portfolio .mission-visual { padding: 0.7rem 1.2rem; border-block: 1px solid var(--color-border); background: var(--color-background); }
+#portfolio .mission-visual svg { display: block; width: 100%; height: clamp(70px, 11vh, 115px); overflow: visible; fill: var(--color-green-primary); }
+#portfolio .mission-gridline { stroke: var(--color-border); stroke-width: 0.6; fill: none; opacity: 0.5; }
+#portfolio .mission-signal { stroke: var(--color-green-primary); stroke-width: 2; fill: none; }
+#portfolio .mission-route { stroke: var(--color-red-primary); stroke-width: 1; stroke-dasharray: 4 5; fill: none; }
+#portfolio .mission-visual > span { display: block; margin-top: 0.4rem; font: 500 0.55rem 'Chakra Petch', sans-serif; color: var(--color-muted); letter-spacing: 0.13em; }
+#portfolio .mission-body { display: flex; flex-direction: column; flex: 1; padding: 1.2rem; }
+#portfolio .mission-body h3 { margin: 0 0 0.6rem; color: var(--color-text); font-size: clamp(1.25rem, 2vw, 1.7rem); }
+#portfolio .mission-body p { font-size: 1rem; line-height: 1.55; margin: 0 0 0.8rem; }
+#portfolio .mission-body .mission-summary { color: var(--color-green-soft); font-size: 1.05rem; }
+#portfolio .mission-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; padding: 0; margin: auto 0 1rem; }
+#portfolio .mission-tags li { margin: 0; padding: 0.25rem 0.45rem; border: 1px solid var(--color-border); color: var(--color-muted); font: 500 0.55rem 'Chakra Petch', sans-serif; letter-spacing: 0.08em; }
+#portfolio .mission-card a.mission-action {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 0.7rem 0.9rem; border-radius: 0; background: var(--color-background-secondary);
+  color: var(--color-green-primary); border: 1px solid var(--color-green-primary);
+  box-shadow: none; font: 600 0.85rem 'Chakra Petch', sans-serif;
+}
+#portfolio .mission-card a.mission-action:hover { background: var(--color-green-primary); color: var(--color-background); transform: none; }
+html[data-theme="light"] #portfolio .mission-card a.mission-action:visited { color: var(--color-green-primary); }
+html[data-theme="light"] #portfolio .mission-card a.mission-action:hover { color: #fffaf5; }
+#portfolio .mission-return { margin: 1.5rem 0 0; }
+@media (max-width: 767px) {
+  #portfolio .mission-grid { grid-template-columns: 1fr; }
+  #portfolio .mission-heading { display: block; }
+  #portfolio .mission-heading p { text-align: left; margin-top: 0.6rem; }
+  #portfolio .mission-topline { font-size: 0.55rem; letter-spacing: 0.04em; }
+}
+
+/* End credits / communications directory */
+#contact {
+  display: block;
+  padding: 4.8rem clamp(2rem, 5vw, 5rem) 2rem;
+  text-align: left;
+  background: radial-gradient(ellipse at 85% 55%, rgb(99 230 151 / 4%), transparent 55%);
+}
+#contact .contact-topline {
+  display: flex; justify-content: space-between; gap: 1rem;
+  padding-bottom: 0.6rem; border-bottom: 1px solid var(--color-border);
+  color: var(--color-muted); font: 500 0.65rem 'Chakra Petch', sans-serif; letter-spacing: 0.14em;
+}
+#contact .contact-topline span:last-child { color: var(--color-red-primary); }
+#contact .contact-layout {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 6vw, 6rem); align-items: center;
+  max-width: 1250px; margin: clamp(2rem, 7vh, 5rem) auto;
+}
+#contact .contact-eyebrow { margin: 0 0 1rem; color: var(--color-green-primary); font: 600 0.7rem 'Chakra Petch', sans-serif; letter-spacing: 0.15em; }
+#contact #contact-heading {
+  margin: 0; padding: 0; border: 0; color: var(--color-text);
+  font-size: clamp(2rem, 4.6vw, 4.6rem); line-height: 1; letter-spacing: -0.04em;
+}
+#contact #contact-heading span { color: var(--color-green-primary); }
+#contact .contact-copy { margin: 1.5rem 0 2rem; color: var(--color-muted); font-size: 1.1rem; line-height: 1.8; }
+#contact .contact-signature { display: flex; align-items: center; gap: 1rem; padding-top: 1.3rem; border-top: 1px solid var(--color-border); }
+#contact .contact-monogram {
+  display: grid; place-items: center; width: 60px; height: 60px; flex: 0 0 auto;
+  border: 1px solid var(--color-red-primary); color: var(--color-red-primary);
+  font: 700 1.4rem 'Chakra Petch', sans-serif;
+}
+#contact .contact-signature h3 { margin: 0 0 0.25rem; font-size: 1rem; color: var(--color-text); }
+#contact .contact-signature p { margin: 0; font-size: 0.85rem; line-height: 1.5; }
+#contact .contact-terminal { min-width: 0; border: 1px solid var(--color-border); background: var(--color-panel); box-shadow: var(--shadow-panel); }
+#contact .contact-terminal-bar {
+  display: flex; justify-content: space-between; gap: 1rem; padding: 0.9rem 1.2rem;
+  background: var(--color-background-secondary); border-bottom: 1px solid var(--color-border);
+  color: var(--color-muted); font: 500 0.6rem 'Chakra Petch', sans-serif; letter-spacing: 0.12em;
+}
+#contact .contact-terminal-bar i { display: inline-block; width: 5px; height: 5px; background: var(--color-green-primary); margin-right: 0.5rem; }
+#contact .contact-terminal-prompt { margin: 1.2rem 1.2rem 0.9rem; color: var(--color-green-primary); font: 500 0.75rem monospace; }
+#contact .contact-email,
+#contact .contact-channels a {
+  display: flex; flex-direction: column; align-items: stretch; gap: 0.6rem;
+  min-width: 0; min-height: 0; box-sizing: border-box;
+  padding: 1rem; border: 1px solid var(--color-border); border-radius: 0;
+  background: var(--color-background); color: var(--color-text);
+  text-decoration: none; box-shadow: none;
+}
+#contact .contact-email { margin: 0 1.2rem; border-left: 3px solid var(--color-green-primary); }
+#contact .contact-channel-label { color: var(--color-muted); font: 500 0.6rem 'Chakra Petch', sans-serif; letter-spacing: 0.13em; }
+#contact .contact-email strong { color: var(--color-green-primary); font: 600 clamp(1rem, 2vw, 1.5rem) 'Chakra Petch', sans-serif; overflow-wrap: anywhere; }
+#contact .contact-channel-note { display: flex; justify-content: space-between; gap: 0.5rem; color: var(--color-muted); font-size: 0.85rem; font-weight: 400; }
+#contact .contact-channels { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.7rem; padding: 0; margin: 0.7rem 1.2rem 0; list-style: none; }
+#contact .contact-channels li { display: block; min-width: 0; margin: 0; }
+#contact .contact-channels a { height: 100%; }
+#contact .contact-channels strong { font: 600 0.95rem 'Chakra Petch', sans-serif; color: var(--color-text); overflow-wrap: anywhere; }
+#contact :is(.contact-email, .contact-channels a):hover { border-color: var(--color-green-primary); background: var(--color-background-secondary); transform: none; }
+#contact :is(.contact-email, .contact-channels a):focus-visible { outline: 2px solid var(--color-green-primary); outline-offset: 3px; }
+#contact .contact-terminal-end { margin: 1.2rem; color: var(--color-muted); font: 500 0.6rem 'Chakra Petch', sans-serif; letter-spacing: 0.12em; }
+#contact .contact-terminal-end span { color: var(--color-green-primary); }
+#contact .contact-outro { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-top: 1.2rem; border-top: 1px solid var(--color-border); }
+#contact .contact-outro p { margin: 0; color: var(--color-text); font: 600 0.9rem 'Chakra Petch', sans-serif; }
+#contact .contact-outro p span { display: block; margin-top: 0.4rem; color: var(--color-muted); font-size: 0.7rem; font-weight: 400; }
+#contact .contact-outro .credits-link { display: inline-block; padding: 0.6rem 0.8rem; border: 1px solid var(--color-border); background: var(--color-background-secondary); color: var(--color-green-soft); text-decoration: none; font: 500 0.8rem 'Chakra Petch', sans-serif; }
+#contact .contact-outro .credits-link:hover { border-color: var(--color-green-primary); color: var(--color-green-primary); }
+@media (max-width: 767px) {
+  #contact .contact-layout { grid-template-columns: 1fr; margin: 2rem auto; gap: 1.5rem; }
+  #contact .contact-topline { font-size: 0.55rem; letter-spacing: 0.04em; }
+  #contact .contact-copy { margin: 1rem 0; font-size: 1rem; }
+  #contact .contact-outro { flex-direction: column; align-items: start; }
+}
+@media (max-width: 380px) { #contact .contact-channels { grid-template-columns: 1fr; } }
+
+/* Full-screen menus: compact display control, no top navigation. */
+body > header.utility-controls {
+  position: fixed;
+  inset: 0.7rem 2.3rem auto auto;
+  width: auto;
+  min-height: 0;
+  height: auto;
+  display: block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  z-index: 1200;
+}
+.utility-controls .theme-toggle { min-height: 30px; font-size: 0.65rem; padding: 0.3rem 0.5rem; }
+main { padding: 0; }
+main > section {
+  height: 100svh;
+  min-height: 100svh;
+  box-sizing: border-box;
+  scroll-margin-top: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+#home, #welcome, #about.character-profile, #portfolio, #contact, #what-i-love, #skills {
+  padding: clamp(2.8rem, 6vh, 4rem) clamp(2rem, 5vw, 5rem) clamp(1rem, 3vh, 2rem);
+}
+#home { justify-content: center; }
+#home .home-hud--top { top: 1.5rem; right: 10rem; }
+#home .home-hud--bottom { bottom: 1.4rem; }
+#welcome, #about.character-profile, #portfolio, #contact {
+  display: flex; flex-direction: column; justify-content: center; gap: 0;
+}
+#welcome .welcome-layout { margin: auto; width: 100%; flex: 0 1 auto; }
+#welcome .welcome-topline, #about .dossier-topline, #portfolio .mission-topline, #contact .contact-topline { margin-bottom: 1rem; flex-shrink: 0; }
+#about > h2 { margin: 0 0 1rem; }
+#about .dossier-grid { width: 100%; margin: auto; }
+#about .portrait-stage { --portrait-height: clamp(200px, 38vh, 400px); }
+#about .dossier-return { flex-shrink: 0; margin-top: 1rem; }
+#contact .contact-layout { margin: auto; width: 100%; }
+#contact .contact-outro { margin-top: 1rem; flex-shrink: 0; }
+#portfolio .mission-heading { margin: 0 0 1rem; }
+#portfolio .mission-grid { width: 100%; margin: auto; }
+#portfolio .mission-body { padding: 0.9rem; }
+#portfolio .mission-body p { font-size: 0.95rem; margin-bottom: 0.6rem; }
+#portfolio .mission-visual svg { height: clamp(55px, 9vh, 100px); }
+#portfolio .mission-return { flex-shrink: 0; margin-top: 0.8rem; }
+#what-i-love {
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 1rem 2rem;
+}
+#what-i-love .codex-entry { min-height: 0; padding-top: 1.1rem; padding-bottom: 1.3rem; overflow-y: auto; }
+#what-i-love .archive-sigil { width: 60px; height: 60px; margin: clamp(0.8rem, 3vh, 2rem) auto 1rem; }
+#what-i-love .codex-entry::after { margin-top: 1.3rem; }
+#what-i-love > p { margin: 0; align-self: end; }
+#skills { grid-template-rows: auto 0.5rem repeat(3, minmax(80px, 1fr)) auto; align-content: stretch; }
+#skills > p { margin: 0.8rem 0 0; align-self: end; }
+body > footer { display: none; }
+@media (min-width: 1024px) {
+  #skills { grid-template-rows: auto minmax(0.5rem, 0.3fr) repeat(3, minmax(90px, 1fr)) auto; }
+}
+@media (max-width: 767px), (max-height: 620px) {
+  #welcome, #about.character-profile, #portfolio, #contact { justify-content: flex-start; }
+  #welcome .welcome-layout, #about .dossier-grid, #portfolio .mission-grid, #contact .contact-layout { margin: 0; }
+}
+@media (max-width: 767px) {
+  #what-i-love { grid-template-rows: auto auto minmax(0, 1fr) auto; }
+  #what-i-love .codex-entry { min-height: 0; }
+  #what-i-love .archive-sigil { width: 44px; height: 44px; margin: 0.7rem auto; font-size: 1.4rem; }
+  #what-i-love .codex-entry h3 { font-size: 1.6rem; margin-bottom: 0.7rem; }
+  #what-i-love .codex-entry > p:not(.archive-category) { font-size: 1rem; line-height: 1.5; }
+  #about .portrait-stage { --portrait-height: 210px; }
+}
+
+/* Section headings receive focus for navigation announcements, without a box.
+   Interactive links and buttons retain their keyboard focus indicators. */
+main > section h2[tabindex="-1"]:focus,
+main > section h2[tabindex="-1"]:focus-visible {
+  outline: none;
+}
+
+/* Text-only mission records: content begins at the top, actions stay at the foot. */
+#portfolio .mission-grid { min-height: clamp(330px, 55svh, 500px); }
+#portfolio .mission-body { padding-top: 1.2rem; }
+#portfolio .mission-body .mission-tags { margin-top: auto; padding-top: 1rem; }
+@media (max-width: 767px) {
+  #portfolio .mission-grid { min-height: 0; }
+  #portfolio .mission-card { min-height: 330px; }
 }
